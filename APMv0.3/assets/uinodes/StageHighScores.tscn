@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://StageHighScores.gd" type="Script" id=1]
+
+[node name="StageHighScores" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.223572
+margin_right = -0.223572
+rect_min_size = Vector2( 0, 75 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+show_behind_parent = true
+margin_right = 375.0
+margin_bottom = 85.0
+rect_min_size = Vector2( 250, 85 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="Button"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 25.0
+margin_top = 12.0
+text = "MODE:
+Stage
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="list" type="Label" parent="."]
+margin_top = 89.0
+margin_right = 375.0
+margin_bottom = 103.0
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

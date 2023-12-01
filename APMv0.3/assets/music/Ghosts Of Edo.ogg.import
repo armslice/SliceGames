@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ghosts Of Edo.ogg-79c7eb6163e63f848a86260c9b0766f9.oggstr"
+
+[deps]
+
+source_file="res://music/Ghosts Of Edo.ogg"
+dest_files=[ "res://.import/Ghosts Of Edo.ogg-79c7eb6163e63f848a86260c9b0766f9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

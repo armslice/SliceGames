@@ -1,0 +1,1023 @@
+[gd_resource type="SpriteFrames" load_steps=374 format=2]
+
+[ext_resource path="res://sprites/Elements/mud.png" type="Texture" id=1]
+[ext_resource path="res://sprites/Elements/sky/sky1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/Elements/chi/chi1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/Elements/magma/magma1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/Elements/blaze_unshaded/blaze_unshaded1.png" type="Texture" id=5]
+[ext_resource path="res://sprites/Elements/chi/chi4.png" type="Texture" id=6]
+[ext_resource path="res://sprites/Elements/snow/snow2.png" type="Texture" id=7]
+[ext_resource path="res://sprites/Elements/chi/chi2.png" type="Texture" id=8]
+[ext_resource path="res://sprites/Elements/steam/steam7.png" type="Texture" id=9]
+[ext_resource path="res://sprites/Elements/steam/steam6.png" type="Texture" id=10]
+[ext_resource path="res://sprites/Elements/steam/steam5.png" type="Texture" id=11]
+[ext_resource path="res://sprites/Elements/steam/steam3.png" type="Texture" id=12]
+[ext_resource path="res://sprites/Elements/steam/steam4.png" type="Texture" id=13]
+[ext_resource path="res://sprites/Elements/steam/steam2.png" type="Texture" id=14]
+[ext_resource path="res://sprites/Elements/steam/steam1.png" type="Texture" id=15]
+[ext_resource path="res://sprites/Elements/magma/magma2.png" type="Texture" id=16]
+[ext_resource path="res://sprites/Elements/magma/magma3.png" type="Texture" id=17]
+[ext_resource path="res://sprites/Elements/magma/magma4.png" type="Texture" id=18]
+[ext_resource path="res://sprites/Elements/sky/sky2.png" type="Texture" id=19]
+[ext_resource path="res://sprites/Elements/sky/sky3.png" type="Texture" id=20]
+[ext_resource path="res://sprites/Elements/death.png" type="Texture" id=21]
+[ext_resource path="res://sprites/Elements/energy/energy6.png" type="Texture" id=22]
+[ext_resource path="res://sprites/Elements/energy/energy7.png" type="Texture" id=23]
+[ext_resource path="res://sprites/Elements/eel/eel2.png" type="Texture" id=24]
+[ext_resource path="res://sprites/Elements/snow/snow1.png" type="Texture" id=25]
+[ext_resource path="res://sprites/Elements/snow/snow3.png" type="Texture" id=26]
+[ext_resource path="res://sprites/Elements/snow/snow4.png" type="Texture" id=27]
+[ext_resource path="res://sprites/Elements/fire/fire_c3.png" type="Texture" id=28]
+[ext_resource path="res://sprites/Elements/fire/fire_c4.png" type="Texture" id=29]
+[ext_resource path="res://sprites/Elements/fire/fire_c5.png" type="Texture" id=30]
+[ext_resource path="res://sprites/Elements/earth/earth100_4.png" type="Texture" id=31]
+[ext_resource path="res://sprites/Elements/earth/earth100_1.png" type="Texture" id=32]
+[ext_resource path="res://sprites/Elements/earth/earth100_2.png" type="Texture" id=33]
+[ext_resource path="res://sprites/Elements/earth/earth100_3.png" type="Texture" id=34]
+[ext_resource path="res://sprites/Elements/air/air0.png" type="Texture" id=35]
+[ext_resource path="res://sprites/Elements/air/air1.png" type="Texture" id=36]
+[ext_resource path="res://sprites/Elements/air/air5.png" type="Texture" id=37]
+[ext_resource path="res://sprites/Elements/air/air6.png" type="Texture" id=38]
+[ext_resource path="res://sprites/Elements/life/life1.png" type="Texture" id=39]
+[ext_resource path="res://sprites/Elements/hail/hail1.png" type="Texture" id=40]
+[ext_resource path="res://sprites/Elements/hail/hail2.png" type="Texture" id=41]
+[ext_resource path="res://sprites/Elements/hail/hail3.png" type="Texture" id=42]
+[ext_resource path="res://sprites/Elements/hail/hail4.png" type="Texture" id=43]
+[ext_resource path="res://sprites/Elements/sun/sun2.png" type="Texture" id=44]
+[ext_resource path="res://sprites/Elements/sun/sun3.png" type="Texture" id=45]
+[ext_resource path="res://sprites/Elements/sun/sun4.png" type="Texture" id=46]
+[ext_resource path="res://sprites/Elements/sun/sun5.png" type="Texture" id=47]
+[ext_resource path="res://sprites/Elements/stone.png" type="Texture" id=48]
+[ext_resource path="res://sprites/Elements/Electricity/Electricity1.png" type="Texture" id=49]
+[ext_resource path="res://sprites/Elements/Electricity/Electricity2.png" type="Texture" id=50]
+[ext_resource path="res://sprites/Elements/Electricity/Electricity3.png" type="Texture" id=51]
+[ext_resource path="res://sprites/Elements/Electricity/Electricity4.png" type="Texture" id=52]
+[ext_resource path="res://sprites/Elements/salt.png" type="Texture" id=53]
+[ext_resource path="res://sprites/Elements/swamp/swamp1.png" type="Texture" id=54]
+[ext_resource path="res://sprites/Elements/plants/sprout.png" type="Texture" id=55]
+[ext_resource path="res://sprites/Elements/obsidian.png" type="Texture" id=56]
+[ext_resource path="res://sprites/Elements/frog/frog1.png" type="Texture" id=57]
+[ext_resource path="res://sprites/Elements/wind/wind1.png" type="Texture" id=58]
+[ext_resource path="res://sprites/Elements/wind/wind2.png" type="Texture" id=59]
+[ext_resource path="res://sprites/Elements/wind/wind9.png" type="Texture" id=60]
+[ext_resource path="res://sprites/Elements/wind/wind10.png" type="Texture" id=61]
+[ext_resource path="res://sprites/Elements/fire/flame1.png" type="Texture" id=62]
+[ext_resource path="res://sprites/Elements/fire/flame2.png" type="Texture" id=63]
+[ext_resource path="res://sprites/Elements/fire/flame3.png" type="Texture" id=64]
+[ext_resource path="res://sprites/Elements/fire/flame4.png" type="Texture" id=65]
+[ext_resource path="res://sprites/Elements/fire/flame5.png" type="Texture" id=66]
+[ext_resource path="res://sprites/Elements/charcoal.png" type="Texture" id=67]
+[ext_resource path="res://sprites/Elements/time/time3.png" type="Texture" id=68]
+[ext_resource path="res://sprites/Elements/time/time2.png" type="Texture" id=69]
+[ext_resource path="res://sprites/Elements/time/time4.png" type="Texture" id=70]
+[ext_resource path="res://sprites/Elements/time/time5.png" type="Texture" id=71]
+[ext_resource path="res://sprites/Elements/cloud/cloud1.png" type="Texture" id=72]
+[ext_resource path="res://sprites/Elements/cloud/cloud2.png" type="Texture" id=73]
+[ext_resource path="res://sprites/Elements/spark/spark1.png" type="Texture" id=74]
+[ext_resource path="res://sprites/Elements/spark/spark2.png" type="Texture" id=75]
+[ext_resource path="res://sprites/Elements/spark/spark3.png" type="Texture" id=76]
+[ext_resource path="res://sprites/Elements/plants/flower.png" type="Texture" id=77]
+[ext_resource path="res://sprites/Elements/frost/frost1.png" type="Texture" id=78]
+[ext_resource path="res://sprites/Elements/steam/steam8.png" type="Texture" id=79]
+[ext_resource path="res://sprites/Elements/steam/steam9.png" type="Texture" id=80]
+[ext_resource path="res://sprites/Elements/ice/ice1.png" type="Texture" id=81]
+[ext_resource path="res://sprites/Elements/ice/ice2.png" type="Texture" id=82]
+[ext_resource path="res://sprites/Elements/ice/ice3.png" type="Texture" id=83]
+[ext_resource path="res://sprites/Elements/smoke/smoke6.png" type="Texture" id=84]
+[ext_resource path="res://sprites/Elements/smoke/smoke7.png" type="Texture" id=85]
+[ext_resource path="res://sprites/Elements/smoke/smoke8.png" type="Texture" id=86]
+[ext_resource path="res://sprites/Elements/smoke/smoke9.png" type="Texture" id=87]
+[ext_resource path="res://sprites/Elements/energy/energy1.png" type="Texture" id=88]
+[ext_resource path="res://sprites/Elements/chi/chi3.png" type="Texture" id=89]
+[ext_resource path="res://sprites/Elements/gravity/Sprite-0005.png" type="Texture" id=90]
+[ext_resource path="res://sprites/Elements/gravity/Sprite-0009.png" type="Texture" id=91]
+[ext_resource path="res://sprites/Elements/pressure/pressure3.png" type="Texture" id=92]
+[ext_resource path="res://sprites/Elements/pressure/pressure2.png" type="Texture" id=93]
+[ext_resource path="res://sprites/Elements/gravity/Sprite-0006.png" type="Texture" id=94]
+[ext_resource path="res://sprites/Elements/water/water_b1.png" type="Texture" id=95]
+[ext_resource path="res://sprites/Elements/water/water_b2.png" type="Texture" id=96]
+[ext_resource path="res://sprites/Elements/gravity/Sprite-0008.png" type="Texture" id=97]
+[ext_resource path="res://sprites/Elements/water/water_b3.png" type="Texture" id=98]
+[ext_resource path="res://sprites/Elements/water/water_b5.png" type="Texture" id=99]
+[ext_resource path="res://sprites/Elements/pressure/pressure1.png" type="Texture" id=100]
+[ext_resource path="res://sprites/Elements/water/water_b4.png" type="Texture" id=101]
+[ext_resource path="res://sprites/Elements/chi/chi5.png" type="Texture" id=102]
+[ext_resource path="res://sprites/Elements/gravity/Sprite-0007.png" type="Texture" id=103]
+[ext_resource path="res://sprites/Elements/fire/fire_c1.png" type="Texture" id=104]
+[ext_resource path="res://sprites/Elements/fire/fire_c2.png" type="Texture" id=105]
+[ext_resource path="res://sprites/Elements/air/air2.png" type="Texture" id=106]
+[ext_resource path="res://sprites/Elements/air/air3.png" type="Texture" id=107]
+[ext_resource path="res://sprites/Elements/air/air4.png" type="Texture" id=108]
+[ext_resource path="res://sprites/Elements/fire/fire_0.png" type="Texture" id=109]
+[ext_resource path="res://sprites/Elements/fire/fire_1.png" type="Texture" id=110]
+[ext_resource path="res://sprites/Elements/fire/fire_2.png" type="Texture" id=111]
+[ext_resource path="res://sprites/Elements/fire/fire_3.png" type="Texture" id=112]
+[ext_resource path="res://sprites/Elements/coal.png" type="Texture" id=113]
+[ext_resource path="res://sprites/Elements/sand.png" type="Texture" id=114]
+[ext_resource path="res://sprites/Elements/sun/sun1.png" type="Texture" id=115]
+[ext_resource path="res://sprites/Elements/wind/wind3.png" type="Texture" id=116]
+[ext_resource path="res://sprites/Elements/wind/wind4.png" type="Texture" id=117]
+[ext_resource path="res://sprites/Elements/wind/wind5.png" type="Texture" id=118]
+[ext_resource path="res://sprites/Elements/wind/wind6.png" type="Texture" id=119]
+[ext_resource path="res://sprites/Elements/wind/wind7.png" type="Texture" id=120]
+[ext_resource path="res://sprites/Elements/wind/wind8.png" type="Texture" id=121]
+[ext_resource path="res://sprites/Elements/frost/frost2.png" type="Texture" id=122]
+[ext_resource path="res://sprites/Elements/frost/frost3.png" type="Texture" id=123]
+[ext_resource path="res://sprites/Elements/frost/frost4.png" type="Texture" id=124]
+[ext_resource path="res://sprites/Elements/clay/clay1.png" type="Texture" id=125]
+[ext_resource path="res://sprites/Elements/clay/clay2.png" type="Texture" id=126]
+[ext_resource path="res://sprites/Elements/dew/dew1.png" type="Texture" id=127]
+[ext_resource path="res://sprites/Elements/dew/dew2.png" type="Texture" id=128]
+[ext_resource path="res://sprites/Elements/dew/dew3.png" type="Texture" id=129]
+[ext_resource path="res://sprites/Elements/dew/dew4.png" type="Texture" id=130]
+[ext_resource path="res://sprites/Elements/dew/dew5.png" type="Texture" id=131]
+[ext_resource path="res://sprites/Elements/dew/dew6.png" type="Texture" id=132]
+[ext_resource path="res://sprites/Elements/river/river1.png" type="Texture" id=133]
+[ext_resource path="res://sprites/Elements/river/river2.png" type="Texture" id=134]
+[ext_resource path="res://sprites/Elements/river/river3.png" type="Texture" id=135]
+[ext_resource path="res://sprites/Elements/river/river4.png" type="Texture" id=136]
+[ext_resource path="res://sprites/Elements/river/river5.png" type="Texture" id=137]
+[ext_resource path="res://sprites/Elements/rock/rock_1.png" type="Texture" id=138]
+[ext_resource path="res://sprites/Elements/mist/mist1.png" type="Texture" id=139]
+[ext_resource path="res://sprites/Elements/mist/mist2.png" type="Texture" id=140]
+[ext_resource path="res://sprites/Elements/mist/mist3.png" type="Texture" id=141]
+[ext_resource path="res://sprites/Elements/mist/mist4.png" type="Texture" id=142]
+[ext_resource path="res://sprites/Elements/mist/mist5.png" type="Texture" id=143]
+[ext_resource path="res://sprites/Elements/mist/mist6.png" type="Texture" id=144]
+[ext_resource path="res://sprites/Elements/mist/mist7.png" type="Texture" id=145]
+[ext_resource path="res://sprites/Elements/mist/mist8.png" type="Texture" id=146]
+[ext_resource path="res://sprites/Elements/lightning/lightning1.png" type="Texture" id=147]
+[ext_resource path="res://sprites/Elements/lightning/lightning2.png" type="Texture" id=148]
+[ext_resource path="res://sprites/Elements/lightning/lightning3.png" type="Texture" id=149]
+[ext_resource path="res://sprites/Elements/lightning/lightning4.png" type="Texture" id=150]
+[ext_resource path="res://sprites/Elements/lightning/lightning5.png" type="Texture" id=151]
+[ext_resource path="res://sprites/Elements/lightning/lightning6.png" type="Texture" id=152]
+[ext_resource path="res://sprites/Elements/lightning/lightning7.png" type="Texture" id=153]
+[ext_resource path="res://sprites/Elements/lightning/lightning8.png" type="Texture" id=154]
+[ext_resource path="res://sprites/Elements/ice/ice4.png" type="Texture" id=155]
+[ext_resource path="res://sprites/Elements/worm/worm1.png" type="Texture" id=156]
+[ext_resource path="res://sprites/Elements/worm/worm2.png" type="Texture" id=157]
+[ext_resource path="res://sprites/Elements/worm/worm3.png" type="Texture" id=158]
+[ext_resource path="res://sprites/Elements/palo_santo.png" type="Texture" id=159]
+[ext_resource path="res://sprites/Elements/rain/rain1.png" type="Texture" id=160]
+[ext_resource path="res://sprites/Elements/rain/rain2.png" type="Texture" id=161]
+[ext_resource path="res://sprites/Elements/rain/rain3.png" type="Texture" id=162]
+[ext_resource path="res://sprites/Elements/rain/rain4.png" type="Texture" id=163]
+[ext_resource path="res://sprites/Elements/soil/soil.png" type="Texture" id=164]
+[ext_resource path="res://sprites/Elements/smoke/smoke1.png" type="Texture" id=165]
+[ext_resource path="res://sprites/Elements/smoke/smoke2.png" type="Texture" id=166]
+[ext_resource path="res://sprites/Elements/smoke/smoke3.png" type="Texture" id=167]
+[ext_resource path="res://sprites/Elements/smoke/smoke4.png" type="Texture" id=168]
+[ext_resource path="res://sprites/Elements/smoke/smoke5.png" type="Texture" id=169]
+[ext_resource path="res://sprites/Elements/plants/tree.png" type="Texture" id=170]
+[ext_resource path="res://sprites/Elements/brick/brick.png" type="Texture" id=171]
+[ext_resource path="res://sprites/Elements/dust/dust1.png" type="Texture" id=172]
+[ext_resource path="res://sprites/Elements/dust/dust2.png" type="Texture" id=173]
+[ext_resource path="res://sprites/Elements/dust/dust3.png" type="Texture" id=174]
+[ext_resource path="res://sprites/Elements/dust/dust4.png" type="Texture" id=175]
+[ext_resource path="res://sprites/Elements/dust/dust5.png" type="Texture" id=176]
+[ext_resource path="res://sprites/Elements/heat/heat1.png" type="Texture" id=177]
+[ext_resource path="res://sprites/Elements/heat/heat2.png" type="Texture" id=178]
+[ext_resource path="res://sprites/Elements/heat/heat3.png" type="Texture" id=179]
+[ext_resource path="res://sprites/Elements/heat/heat4.png" type="Texture" id=180]
+[ext_resource path="res://sprites/Elements/heat/heat5.png" type="Texture" id=181]
+[ext_resource path="res://sprites/Elements/pool/pool1.png" type="Texture" id=182]
+[ext_resource path="res://sprites/Elements/time/time9.png" type="Texture" id=183]
+[ext_resource path="res://sprites/Elements/pool/pool4.png" type="Texture" id=184]
+[ext_resource path="res://sprites/Elements/energy/energy3.png" type="Texture" id=185]
+[ext_resource path="res://sprites/Elements/time/time8.png" type="Texture" id=186]
+[ext_resource path="res://sprites/Elements/time/time6.png" type="Texture" id=187]
+[ext_resource path="res://sprites/Elements/time/time1.png" type="Texture" id=188]
+[ext_resource path="res://sprites/Elements/ash.png" type="Texture" id=189]
+[ext_resource path="res://sprites/Elements/pond/pond5.png" type="Texture" id=190]
+[ext_resource path="res://sprites/Elements/pond/pond2.png" type="Texture" id=191]
+[ext_resource path="res://sprites/Elements/magnet/magnet4.png" type="Texture" id=192]
+[ext_resource path="res://sprites/Elements/gunpowder.png" type="Texture" id=193]
+[ext_resource path="res://sprites/Elements/lake/lake2.png" type="Texture" id=194]
+[ext_resource path="res://sprites/Elements/magnet/magnet3.png" type="Texture" id=195]
+[ext_resource path="res://sprites/Elements/lake/lake1.png" type="Texture" id=196]
+[ext_resource path="res://sprites/Elements/turtle-noah/turtle2.png" type="Texture" id=197]
+[ext_resource path="res://sprites/Elements/lake/lake3.png" type="Texture" id=198]
+[ext_resource path="res://sprites/Elements/pool/pool5.png" type="Texture" id=199]
+[ext_resource path="res://sprites/Elements/pool/pool2.png" type="Texture" id=200]
+[ext_resource path="res://sprites/Elements/energy/energy4.png" type="Texture" id=201]
+[ext_resource path="res://sprites/Elements/energy/energy2.png" type="Texture" id=202]
+[ext_resource path="res://sprites/Elements/time/time7.png" type="Texture" id=203]
+[ext_resource path="res://sprites/Elements/time/time10.png" type="Texture" id=204]
+[ext_resource path="res://sprites/Elements/energy/energy5.png" type="Texture" id=205]
+[ext_resource path="res://sprites/Elements/glass.png" type="Texture" id=206]
+[ext_resource path="res://sprites/Elements/mana/mana4.png" type="Texture" id=207]
+[ext_resource path="res://sprites/Elements/mana/mana5.png" type="Texture" id=208]
+[ext_resource path="res://sprites/Elements/mana/mana6.png" type="Texture" id=209]
+[ext_resource path="res://sprites/Elements/mana/mana3.png" type="Texture" id=210]
+[ext_resource path="res://sprites/Elements/pool/pool3.png" type="Texture" id=211]
+[ext_resource path="res://sprites/Elements/turtle-noah/turtle3.png" type="Texture" id=212]
+[ext_resource path="res://sprites/Elements/turtle-noah/turtle4.png" type="Texture" id=213]
+[ext_resource path="res://sprites/Elements/magnet/magnet1.png" type="Texture" id=214]
+[ext_resource path="res://sprites/Elements/turtle-noah/turtle1.png" type="Texture" id=215]
+[ext_resource path="res://sprites/Elements/pond/pond4.png" type="Texture" id=216]
+[ext_resource path="res://sprites/Elements/beetle.png" type="Texture" id=217]
+[ext_resource path="res://sprites/Elements/fly.png" type="Texture" id=218]
+[ext_resource path="res://sprites/Elements/pond/pond1.png" type="Texture" id=219]
+[ext_resource path="res://sprites/Elements/pond/pond3.png" type="Texture" id=220]
+[ext_resource path="res://sprites/Elements/magnet/magnet2.png" type="Texture" id=221]
+[ext_resource path="res://sprites/Elements/rainbow.png" type="Texture" id=222]
+[ext_resource path="res://sprites/Elements/sulfur.png" type="Texture" id=223]
+[ext_resource path="res://sprites/Elements/lake/lake4.png" type="Texture" id=224]
+[ext_resource path="res://sprites/Elements/moss.png" type="Texture" id=225]
+[ext_resource path="res://sprites/Elements/mist/Mist2_9.png" type="Texture" id=226]
+[ext_resource path="res://sprites/Elements/mist/Mist2_10.png" type="Texture" id=227]
+[ext_resource path="res://sprites/Elements/mist/Mist2_2.png" type="Texture" id=228]
+[ext_resource path="res://sprites/Elements/mist/Mist2_8.png" type="Texture" id=229]
+[ext_resource path="res://sprites/Elements/mist/Mist2_3.png" type="Texture" id=230]
+[ext_resource path="res://sprites/Elements/mist/Mist2_5.png" type="Texture" id=231]
+[ext_resource path="res://sprites/Elements/mist/Mist2_1.png" type="Texture" id=232]
+[ext_resource path="res://sprites/Elements/mist/Mist2_4.png" type="Texture" id=233]
+[ext_resource path="res://sprites/Elements/mist/Mist2_7.png" type="Texture" id=234]
+[ext_resource path="res://sprites/Elements/mist/Mist2_6.png" type="Texture" id=235]
+[ext_resource path="res://sprites/Elements/mist/Mist2_12.png" type="Texture" id=236]
+[ext_resource path="res://sprites/Elements/mist/Mist2_11.png" type="Texture" id=237]
+[ext_resource path="res://sprites/Elements/smog/smog3.png" type="Texture" id=238]
+[ext_resource path="res://sprites/Elements/smog/smog1.png" type="Texture" id=239]
+[ext_resource path="res://sprites/Elements/smog/smog2.png" type="Texture" id=240]
+[ext_resource path="res://sprites/Elements/smog/smog4.png" type="Texture" id=241]
+[ext_resource path="res://sprites/Elements/asteroid.png" type="Texture" id=242]
+[ext_resource path="res://sprites/ui/unknown.png" type="Texture" id=243]
+[ext_resource path="res://sprites/Elements/slime/slime3.png" type="Texture" id=244]
+[ext_resource path="res://sprites/Elements/slime/slime2.png" type="Texture" id=245]
+[ext_resource path="res://sprites/Elements/slime/slime1.png" type="Texture" id=246]
+[ext_resource path="res://sprites/Elements/slime/slime4.png" type="Texture" id=247]
+[ext_resource path="res://sprites/Elements/bacteria/bacteria2.png" type="Texture" id=248]
+[ext_resource path="res://sprites/Elements/bacteria/bacteria3.png" type="Texture" id=249]
+[ext_resource path="res://sprites/Elements/bacteria/bacteria6.png" type="Texture" id=250]
+[ext_resource path="res://sprites/Elements/bacteria/bacteria5.png" type="Texture" id=251]
+[ext_resource path="res://sprites/Elements/bacteria/bacteria1.png" type="Texture" id=252]
+[ext_resource path="res://sprites/Elements/bacteria/bacteria4.png" type="Texture" id=253]
+[ext_resource path="res://sprites/Elements/holySmoke/holySmoke4.png" type="Texture" id=254]
+[ext_resource path="res://sprites/Elements/holySmoke/holySmoke5.png" type="Texture" id=255]
+[ext_resource path="res://sprites/Elements/holySmoke/holySmoke9.png" type="Texture" id=256]
+[ext_resource path="res://sprites/Elements/holySmoke/holySmoke3.png" type="Texture" id=257]
+[ext_resource path="res://sprites/Elements/holySmoke/holySmoke6.png" type="Texture" id=258]
+[ext_resource path="res://sprites/Elements/holySmoke/holySmoke7.png" type="Texture" id=259]
+[ext_resource path="res://sprites/Elements/holySmoke/holySmoke8.png" type="Texture" id=260]
+[ext_resource path="res://sprites/Elements/holySmoke/holySmoke2.png" type="Texture" id=261]
+[ext_resource path="res://sprites/Elements/holySmoke/holySmoke1.png" type="Texture" id=262]
+[ext_resource path="res://sprites/Elements/grass/Grass4.png" type="Texture" id=263]
+[ext_resource path="res://sprites/Elements/grass/Grass3.png" type="Texture" id=264]
+[ext_resource path="res://sprites/Elements/grass/Grass2.png" type="Texture" id=265]
+[ext_resource path="res://sprites/Elements/grass/Grass5.png" type="Texture" id=266]
+[ext_resource path="res://sprites/Elements/slug/slug2.png" type="Texture" id=267]
+[ext_resource path="res://sprites/Elements/slug/slug3.png" type="Texture" id=268]
+[ext_resource path="res://sprites/Elements/slug/slug4.png" type="Texture" id=269]
+[ext_resource path="res://sprites/Elements/ceramic.png" type="Texture" id=270]
+[ext_resource path="res://sprites/Elements/slug/slug1.png" type="Texture" id=271]
+[ext_resource path="res://sprites/Elements/bomb/bomb3.png" type="Texture" id=272]
+[ext_resource path="res://sprites/Elements/bomb/time Bomb1.png" type="Texture" id=273]
+[ext_resource path="res://sprites/Elements/bomb/bomb2.png" type="Texture" id=274]
+[ext_resource path="res://sprites/Elements/bomb/bomb4.png" type="Texture" id=275]
+[ext_resource path="res://sprites/Elements/bomb/time Bomb2.png" type="Texture" id=276]
+[ext_resource path="res://sprites/Elements/bomb/time Bomb4.png" type="Texture" id=277]
+[ext_resource path="res://sprites/Elements/bomb/time Bomb3.png" type="Texture" id=278]
+[ext_resource path="res://sprites/Elements/bomb/bomb1.png" type="Texture" id=279]
+[ext_resource path="res://sprites/Elements/TNT.png" type="Texture" id=280]
+[ext_resource path="res://sprites/methane/methane5.png" type="Texture" id=281]
+[ext_resource path="res://sprites/methane/methane8.png" type="Texture" id=282]
+[ext_resource path="res://sprites/methane/methane2.png" type="Texture" id=283]
+[ext_resource path="res://sprites/methane/methane3.png" type="Texture" id=284]
+[ext_resource path="res://sprites/methane/methane4.png" type="Texture" id=285]
+[ext_resource path="res://sprites/methane/methane7.png" type="Texture" id=286]
+[ext_resource path="res://sprites/methane/methane6.png" type="Texture" id=287]
+[ext_resource path="res://sprites/methane/methane1.png" type="Texture" id=288]
+[ext_resource path="res://sprites/Elements/sugar.png" type="Texture" id=289]
+[ext_resource path="res://sprites/Elements/eel/eel1.png" type="Texture" id=290]
+[ext_resource path="res://sprites/Elements/brick/wall.png" type="Texture" id=291]
+[ext_resource path="res://sprites/Elements/brick/house.png" type="Texture" id=292]
+[ext_resource path="res://sprites/Elements/storm/storm4.png" type="Texture" id=293]
+[ext_resource path="res://sprites/Elements/storm/storm3.png" type="Texture" id=294]
+[ext_resource path="res://sprites/Elements/storm/storm1.png" type="Texture" id=295]
+[ext_resource path="res://sprites/Elements/storm/storm2.png" type="Texture" id=296]
+[ext_resource path="res://sprites/Elements/snow/snow_B1.png" type="Texture" id=297]
+[ext_resource path="res://sprites/Elements/snow/snow_B2.png" type="Texture" id=298]
+[ext_resource path="res://sprites/Elements/snow/snow_B3.png" type="Texture" id=299]
+[ext_resource path="res://sprites/Elements/snow/snow_B4.png" type="Texture" id=300]
+[ext_resource path="res://sprites/Elements/catepillar/catepillar2.png" type="Texture" id=301]
+[ext_resource path="res://sprites/Elements/catepillar/catepillar1.png" type="Texture" id=302]
+[ext_resource path="res://sprites/Elements/catepillar/chrysalis.png" type="Texture" id=303]
+[ext_resource path="res://sprites/Elements/butterfly/butterfly2.png" type="Texture" id=304]
+[ext_resource path="res://sprites/Elements/acid/acid2.png" type="Texture" id=305]
+[ext_resource path="res://sprites/Elements/acid/acid1.png" type="Texture" id=306]
+[ext_resource path="res://sprites/Elements/toxic Waste/Toxic Waste5.png" type="Texture" id=307]
+[ext_resource path="res://sprites/Elements/toxic Waste/Toxic Waste2.png" type="Texture" id=308]
+[ext_resource path="res://sprites/Elements/toxic Waste/Toxic Waste3.png" type="Texture" id=309]
+[ext_resource path="res://sprites/Elements/acid/acid5.png" type="Texture" id=310]
+[ext_resource path="res://sprites/Elements/toxic Waste/Toxic Waste1.png" type="Texture" id=311]
+[ext_resource path="res://sprites/Elements/toxic Waste/Toxic Waste4.png" type="Texture" id=312]
+[ext_resource path="res://sprites/Elements/acid/acid3.png" type="Texture" id=313]
+[ext_resource path="res://sprites/Elements/acid/acid4.png" type="Texture" id=314]
+[ext_resource path="res://sprites/Elements/life/life4.png" type="Texture" id=315]
+[ext_resource path="res://sprites/Elements/life/life3.png" type="Texture" id=316]
+[ext_resource path="res://sprites/Elements/life/life2.png" type="Texture" id=317]
+[ext_resource path="res://sprites/Elements/life/life5.png" type="Texture" id=318]
+[ext_resource path="res://sprites/Elements/life/life6.png" type="Texture" id=319]
+[ext_resource path="res://sprites/Elements/gravel.png" type="Texture" id=320]
+[ext_resource path="res://sprites/fog/fog4.png" type="Texture" id=321]
+[ext_resource path="res://sprites/fog/fog6.png" type="Texture" id=322]
+[ext_resource path="res://sprites/fog/fog5.png" type="Texture" id=323]
+[ext_resource path="res://sprites/fog/fog2.png" type="Texture" id=324]
+[ext_resource path="res://sprites/fog/fog1.png" type="Texture" id=325]
+[ext_resource path="res://sprites/fog/fog3.png" type="Texture" id=326]
+[ext_resource path="res://sprites/Elements/butterfly/butterfly1.png" type="Texture" id=327]
+[ext_resource path="res://sprites/Elements/alcohol/alcohol3.png" type="Texture" id=328]
+[ext_resource path="res://sprites/Elements/alcohol/alcohol1.png" type="Texture" id=329]
+[ext_resource path="res://sprites/Elements/alcohol/alcohol2.png" type="Texture" id=330]
+[ext_resource path="res://sprites/Elements/storm/lightningStrom1.png" type="Texture" id=331]
+[ext_resource path="res://sprites/Elements/storm/lightningStrom3.png" type="Texture" id=332]
+[ext_resource path="res://sprites/Elements/storm/lightningStrom2.png" type="Texture" id=333]
+[ext_resource path="res://sprites/Elements/storm/lightningStrom4.png" type="Texture" id=334]
+[ext_resource path="res://sprites/Elements/Forest.png" type="Texture" id=335]
+[ext_resource path="res://sprites/Elements/virus/virus1.png" type="Texture" id=336]
+[ext_resource path="res://sprites/Elements/virus/virus2.png" type="Texture" id=337]
+[ext_resource path="res://sprites/Elements/sludge/sludge1.png" type="Texture" id=338]
+[ext_resource path="res://sprites/Elements/sludge/sludge2.png" type="Texture" id=339]
+[ext_resource path="res://sprites/Elements/Snail/snail4.png" type="Texture" id=340]
+[ext_resource path="res://sprites/Elements/Snail/snail3.png" type="Texture" id=341]
+[ext_resource path="res://sprites/Elements/Snail/snail1.png" type="Texture" id=342]
+[ext_resource path="res://sprites/Elements/Snail/snail2.png" type="Texture" id=343]
+[ext_resource path="res://sprites/Elements/tundra.png" type="Texture" id=344]
+[ext_resource path="res://sprites/Elements/blackhole/blackHole1.png" type="Texture" id=345]
+[ext_resource path="res://sprites/Elements/blackhole/blackHole2.png" type="Texture" id=346]
+[ext_resource path="res://sprites/Elements/blackhole/blackHole3.png" type="Texture" id=347]
+[ext_resource path="res://sprites/Elements/planet.png" type="Texture" id=348]
+[ext_resource path="res://sprites/Elements/moon.png" type="Texture" id=349]
+[ext_resource path="res://sprites/Elements/GasPlanet.png" type="Texture" id=350]
+[ext_resource path="res://sprites/Elements/star/star1.png" type="Texture" id=351]
+[ext_resource path="res://sprites/Elements/star/star2.png" type="Texture" id=352]
+[ext_resource path="res://sprites/Elements/iron.png" type="Texture" id=353]
+[ext_resource path="res://sprites/Elements/beeSmall.png" type="Texture" id=354]
+[ext_resource path="res://sprites/Elements/seed.png" type="Texture" id=355]
+[ext_resource path="res://sprites/Elements/blasts/bigExplosion4.png" type="Texture" id=356]
+[ext_resource path="res://sprites/Elements/blasts/bigExplosion8.png" type="Texture" id=357]
+[ext_resource path="res://sprites/Elements/blasts/bigExplosion2.png" type="Texture" id=358]
+[ext_resource path="res://sprites/Elements/blasts/bigExplosion1.png" type="Texture" id=359]
+[ext_resource path="res://sprites/Elements/blasts/bigExplosion5.png" type="Texture" id=360]
+[ext_resource path="res://sprites/Elements/blasts/bigExplosion7.png" type="Texture" id=361]
+[ext_resource path="res://sprites/Elements/town.png" type="Texture" id=362]
+[ext_resource path="res://sprites/Elements/village.png" type="Texture" id=363]
+[ext_resource path="res://sprites/Elements/city.png" type="Texture" id=364]
+[ext_resource path="res://sprites/Elements/diamond/diamond2.png" type="Texture" id=365]
+[ext_resource path="res://sprites/Elements/diamond/diamond1.png" type="Texture" id=366]
+[ext_resource path="res://sprites/Elements/rock/rock_0.png" type="Texture" id=367]
+[ext_resource path="res://sprites/Elements/double_rainbow.png" type="Texture" id=368]
+[ext_resource path="res://sprites/Elements/cactus/cactus.png" type="Texture" id=369]
+[ext_resource path="res://sprites/Elements/bush.png" type="Texture" id=370]
+[ext_resource path="res://sprites/Elements/plasma/plasma2.png" type="Texture" id=371]
+[ext_resource path="res://sprites/Elements/plasma/plasma1.png" type="Texture" id=372]
+[ext_resource path="res://sprites/Elements/plasma/plasma3.png" type="Texture" id=373]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 274 ), ExtResource( 272 ), ExtResource( 275 ) ],
+"loop": true,
+"name": "#bomb",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 280 ) ],
+"loop": true,
+"name": "#dynamite",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "#ether",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 359 ), ExtResource( 360 ), ExtResource( 356 ), ExtResource( 361 ), ExtResource( 358 ), ExtResource( 357 ) ],
+"loop": true,
+"name": "#explosion",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 188 ) ],
+"loop": true,
+"name": "#freezeTime",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 311 ), ExtResource( 308 ), ExtResource( 309 ), ExtResource( 312 ), ExtResource( 307 ) ],
+"loop": true,
+"name": "acid",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 160 ), ExtResource( 161 ), ExtResource( 162 ), ExtResource( 163 ) ],
+"loop": true,
+"name": "acid Rain",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 35 ), ExtResource( 36 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 37 ), ExtResource( 38 ) ],
+"loop": true,
+"name": "air",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 329 ), ExtResource( 330 ), ExtResource( 328 ) ],
+"loop": true,
+"name": "alcohol",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 189 ) ],
+"loop": true,
+"name": "ash",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 242 ) ],
+"loop": true,
+"name": "asteroid",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 252 ), ExtResource( 248 ), ExtResource( 249 ), ExtResource( 253 ), ExtResource( 251 ), ExtResource( 250 ) ],
+"loop": true,
+"name": "bacteria",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 354 ) ],
+"loop": true,
+"name": "bee",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 217 ) ],
+"loop": true,
+"name": "beetle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 345 ), ExtResource( 346 ), ExtResource( 347 ) ],
+"loop": true,
+"name": "black Hole",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 109 ), ExtResource( 110 ), ExtResource( 111 ), ExtResource( 112 ) ],
+"loop": true,
+"name": "blaze",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 7 ), ExtResource( 26 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "blizzard",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 279 ) ],
+"loop": true,
+"name": "bomb",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 171 ) ],
+"loop": true,
+"name": "brick",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 370 ) ],
+"loop": true,
+"name": "bush",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 327 ), ExtResource( 304 ) ],
+"loop": true,
+"name": "butterfly",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 369 ) ],
+"loop": true,
+"name": "cactus",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 302 ), ExtResource( 301 ) ],
+"loop": true,
+"name": "catepillar",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 270 ) ],
+"loop": true,
+"name": "ceramic",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 67 ) ],
+"loop": true,
+"name": "charcoal",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 303 ) ],
+"loop": true,
+"name": "chrysalis",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 364 ) ],
+"loop": true,
+"name": "city",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 125 ), ExtResource( 126 ) ],
+"loop": true,
+"name": "clay",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 72 ), ExtResource( 73 ) ],
+"loop": true,
+"name": "cloud",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 113 ) ],
+"loop": true,
+"name": "coal",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "death",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 127 ), ExtResource( 128 ), ExtResource( 129 ), ExtResource( 130 ), ExtResource( 131 ), ExtResource( 132 ) ],
+"loop": true,
+"name": "dew",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 366 ), ExtResource( 365 ) ],
+"loop": true,
+"name": "diamond",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 368 ) ],
+"loop": true,
+"name": "double Rainbow",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 172 ), ExtResource( 173 ), ExtResource( 174 ), ExtResource( 175 ), ExtResource( 176 ) ],
+"loop": true,
+"name": "dust",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 280 ) ],
+"loop": true,
+"name": "dynamite",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "earth",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 290 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "eel",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 290 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "electric Eel",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ) ],
+"loop": true,
+"name": "electricity",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 88 ), ExtResource( 202 ), ExtResource( 185 ), ExtResource( 201 ), ExtResource( 205 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "energy",
+"speed": 10.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "ether",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 104 ), ExtResource( 105 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "fire",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ) ],
+"loop": true,
+"name": "flame",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 77 ) ],
+"loop": true,
+"name": "flower",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 218 ) ],
+"loop": true,
+"name": "fly",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 325 ), ExtResource( 324 ), ExtResource( 326 ), ExtResource( 321 ), ExtResource( 323 ), ExtResource( 322 ) ],
+"loop": true,
+"name": "fog",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 176 ), ExtResource( 50 ), ExtResource( 49 ), ExtResource( 90 ) ],
+"loop": true,
+"name": "force",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 335 ) ],
+"loop": true,
+"name": "forest",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 57 ) ],
+"loop": true,
+"name": "frog",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 78 ), ExtResource( 122 ), ExtResource( 123 ), ExtResource( 124 ) ],
+"loop": true,
+"name": "frost",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 350 ) ],
+"loop": true,
+"name": "gas Planet",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 206 ) ],
+"loop": true,
+"name": "glass",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 265 ), ExtResource( 264 ), ExtResource( 263 ), ExtResource( 266 ) ],
+"loop": true,
+"name": "grass",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 320 ) ],
+"loop": true,
+"name": "gravel",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 90 ), ExtResource( 94 ), ExtResource( 103 ), ExtResource( 97 ), ExtResource( 91 ) ],
+"loop": true,
+"name": "gravity",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 193 ) ],
+"loop": true,
+"name": "gun Powder",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ) ],
+"loop": true,
+"name": "hail",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 177 ), ExtResource( 178 ), ExtResource( 179 ), ExtResource( 180 ), ExtResource( 181 ) ],
+"loop": true,
+"name": "heat",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 262 ), ExtResource( 261 ), ExtResource( 257 ), ExtResource( 254 ), ExtResource( 255 ), ExtResource( 258 ), ExtResource( 259 ), ExtResource( 260 ), ExtResource( 256 ) ],
+"loop": true,
+"name": "holy Smoke",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 292 ) ],
+"loop": true,
+"name": "house",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 155 ) ],
+"loop": true,
+"name": "ice",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "igneous Rock",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 353 ) ],
+"loop": true,
+"name": "iron",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 196 ), ExtResource( 194 ), ExtResource( 198 ), ExtResource( 224 ) ],
+"loop": true,
+"name": "lake",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 39 ), ExtResource( 317 ), ExtResource( 316 ), ExtResource( 315 ), ExtResource( 318 ), ExtResource( 319 ) ],
+"loop": true,
+"name": "life",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 147 ), ExtResource( 148 ), ExtResource( 149 ), ExtResource( 150 ), ExtResource( 151 ), ExtResource( 152 ), ExtResource( 153 ), ExtResource( 154 ) ],
+"loop": true,
+"name": "lightning",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 331 ), ExtResource( 333 ), ExtResource( 332 ), ExtResource( 334 ) ],
+"loop": true,
+"name": "lightning Storm",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "magma",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 214 ), ExtResource( 221 ), ExtResource( 195 ), ExtResource( 192 ) ],
+"loop": true,
+"name": "magnet",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 210 ), ExtResource( 209 ), ExtResource( 208 ), ExtResource( 207 ) ],
+"loop": true,
+"name": "mana",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 48 ) ],
+"loop": true,
+"name": "marble",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 288 ), ExtResource( 283 ), ExtResource( 284 ), ExtResource( 285 ), ExtResource( 281 ), ExtResource( 287 ), ExtResource( 286 ), ExtResource( 282 ) ],
+"loop": true,
+"name": "methane",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 232 ), ExtResource( 228 ), ExtResource( 230 ), ExtResource( 233 ), ExtResource( 231 ), ExtResource( 235 ), ExtResource( 234 ), ExtResource( 229 ), ExtResource( 226 ), ExtResource( 227 ), ExtResource( 237 ), ExtResource( 236 ) ],
+"loop": true,
+"name": "mist",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 349 ) ],
+"loop": true,
+"name": "moon",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 225 ) ],
+"loop": true,
+"name": "moss",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "mud",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 56 ) ],
+"loop": true,
+"name": "obsidian",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 367 ) ],
+"loop": true,
+"name": "ore",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 159 ) ],
+"loop": true,
+"name": "palo Santo",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 348 ) ],
+"loop": true,
+"name": "planet",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 372 ), ExtResource( 371 ), ExtResource( 373 ) ],
+"loop": true,
+"name": "plasma",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 219 ), ExtResource( 191 ), ExtResource( 220 ), ExtResource( 216 ), ExtResource( 190 ) ],
+"loop": true,
+"name": "pond",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 100 ), ExtResource( 93 ), ExtResource( 92 ) ],
+"loop": true,
+"name": "pressure",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 8 ), ExtResource( 89 ), ExtResource( 6 ), ExtResource( 102 ) ],
+"loop": true,
+"name": "qi",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 160 ), ExtResource( 161 ), ExtResource( 162 ), ExtResource( 163 ) ],
+"loop": true,
+"name": "rain",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 222 ) ],
+"loop": true,
+"name": "rainbow",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 133 ), ExtResource( 134 ), ExtResource( 135 ), ExtResource( 136 ), ExtResource( 137 ) ],
+"loop": true,
+"name": "river",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 138 ) ],
+"loop": true,
+"name": "rock",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 53 ) ],
+"loop": true,
+"name": "salt",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 114 ) ],
+"loop": true,
+"name": "sand",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 182 ), ExtResource( 200 ), ExtResource( 211 ), ExtResource( 184 ), ExtResource( 199 ) ],
+"loop": true,
+"name": "sea",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 355 ) ],
+"loop": true,
+"name": "seed",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "sky",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 246 ), ExtResource( 245 ), ExtResource( 244 ), ExtResource( 247 ) ],
+"loop": true,
+"name": "slime",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 338 ), ExtResource( 339 ) ],
+"loop": true,
+"name": "sludge",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 271 ), ExtResource( 267 ), ExtResource( 268 ), ExtResource( 269 ) ],
+"loop": true,
+"name": "slug",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 239 ), ExtResource( 240 ), ExtResource( 238 ), ExtResource( 241 ) ],
+"loop": true,
+"name": "smog",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 165 ), ExtResource( 166 ), ExtResource( 167 ), ExtResource( 168 ), ExtResource( 169 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ) ],
+"loop": true,
+"name": "smoke",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 342 ), ExtResource( 343 ), ExtResource( 341 ), ExtResource( 340 ) ],
+"loop": true,
+"name": "snail",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 297 ), ExtResource( 298 ), ExtResource( 299 ), ExtResource( 300 ) ],
+"loop": true,
+"name": "snow",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 164 ) ],
+"loop": true,
+"name": "soil",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ) ],
+"loop": true,
+"name": "spark",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 55 ) ],
+"loop": true,
+"name": "sprout",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 351 ), ExtResource( 352 ) ],
+"loop": true,
+"name": "star",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 139 ), ExtResource( 140 ), ExtResource( 141 ), ExtResource( 142 ), ExtResource( 143 ), ExtResource( 144 ), ExtResource( 145 ), ExtResource( 146 ) ],
+"loop": true,
+"name": "static",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 79 ), ExtResource( 80 ) ],
+"loop": true,
+"name": "steam",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 295 ), ExtResource( 296 ), ExtResource( 294 ), ExtResource( 293 ) ],
+"loop": true,
+"name": "storm",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 37 ) ],
+"loop": true,
+"name": "strike",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 289 ) ],
+"loop": true,
+"name": "sugar",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 223 ) ],
+"loop": true,
+"name": "sulfur",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 115 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ],
+"loop": true,
+"name": "sun",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 54 ) ],
+"loop": true,
+"name": "swamp",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 188 ), ExtResource( 69 ), ExtResource( 68 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 187 ), ExtResource( 203 ), ExtResource( 186 ), ExtResource( 183 ), ExtResource( 204 ) ],
+"loop": true,
+"name": "time",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 273 ), ExtResource( 276 ), ExtResource( 278 ), ExtResource( 277 ) ],
+"loop": true,
+"name": "time Bomb",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 102 ), ExtResource( 89 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "token",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 362 ) ],
+"loop": true,
+"name": "town",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 306 ), ExtResource( 305 ), ExtResource( 313 ), ExtResource( 314 ), ExtResource( 310 ) ],
+"loop": true,
+"name": "toxic Waste",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 170 ) ],
+"loop": true,
+"name": "tree",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 344 ) ],
+"loop": true,
+"name": "tundra",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 215 ), ExtResource( 197 ), ExtResource( 212 ), ExtResource( 213 ) ],
+"loop": true,
+"name": "turtle",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 243 ) ],
+"loop": true,
+"name": "unknown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 363 ) ],
+"loop": true,
+"name": "village",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 336 ), ExtResource( 337 ) ],
+"loop": true,
+"name": "virus",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 291 ) ],
+"loop": true,
+"name": "wall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 95 ), ExtResource( 96 ), ExtResource( 98 ), ExtResource( 101 ), ExtResource( 99 ) ],
+"loop": true,
+"name": "water",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 58 ), ExtResource( 59 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 120 ), ExtResource( 121 ), ExtResource( 60 ), ExtResource( 61 ) ],
+"loop": true,
+"name": "wind",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 156 ), ExtResource( 157 ), ExtResource( 158 ) ],
+"loop": true,
+"name": "worm",
+"speed": 5.0
+} ]

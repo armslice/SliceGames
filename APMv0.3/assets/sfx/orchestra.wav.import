@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/orchestra.wav-a778ac54de0a9c06951f3cfcf767bfae.sample"
+
+[deps]
+
+source_file="res://sfx/orchestra.wav"
+dest_files=[ "res://.import/orchestra.wav-a778ac54de0a9c06951f3cfcf767bfae.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://sfx/sfx_menu_select4.wav" type="AudioStream" id=1]
+[ext_resource path="res://sfx/mixSucceed.wav" type="AudioStream" id=2]
+[ext_resource path="res://sfx/mixFail.wav" type="AudioStream" id=3]
+[ext_resource path="res://sfx/levelUp.wav" type="AudioStream" id=4]
+[ext_resource path="res://music/Gameboy.ogg" type="AudioStream" id=5]
+[ext_resource path="res://sfx/mastery.wav" type="AudioStream" id=6]
+[ext_resource path="res://sfx/sfx_sounds_error10.wav" type="AudioStream" id=7]
+[ext_resource path="res://sfx/FX53.wav" type="AudioStream" id=8]
+[ext_resource path="res://sfx/fall.wav" type="AudioStream" id=9]
+[ext_resource path="res://sfx/sfx_deathscream_robot3.wav" type="AudioStream" id=10]
+[ext_resource path="res://sfx/sfx_coin_double7.wav" type="AudioStream" id=11]
+
+[node name="sounds" type="Node"]
+
+[node name="mixSucceed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -6.433
+bus = "echoBus1"
+
+[node name="streak" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -4.904
+pitch_scale = 0.7
+bus = "SFX"
+
+[node name="streakEnd" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -3.37
+pitch_scale = 0.93
+bus = "reverbBus"
+
+[node name="streakFail" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+pitch_scale = 1.05
+bus = "reverbBus"
+
+[node name="mixFailed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "SFX"
+
+[node name="levelUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+pitch_scale = 0.63
+bus = "SFX"
+
+[node name="mastery" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+pitch_scale = 0.71
+bus = "SFX"
+
+[node name="discovery" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -0.001
+bus = "echoBus1"
+
+[node name="gameOver" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+pitch_scale = 0.64
+bus = "SFX"
+
+[node name="drop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -15.0
+pitch_scale = 1.09
+bus = "reverbBus"
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 5 )
+bus = "Music"
+
+[node name="extra" type="AudioStreamPlayer" parent="."]
+bus = "SFX"

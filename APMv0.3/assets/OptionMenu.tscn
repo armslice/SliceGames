@@ -1,0 +1,253 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fonts/console.tres" type="DynamicFontData" id=1]
+[ext_resource path="res://Profile.tres" type="Theme" id=2]
+[ext_resource path="res://OptionMenu.gd" type="Script" id=3]
+[ext_resource path="res://uinodes/Options.tres" type="Theme" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 29
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[node name="OptionMenu" type="Control"]
+pause_mode = 2
+modulate = Color( 0.87451, 0.870588, 0.937255, 1 )
+margin_left = 43.8261
+margin_top = 67.0869
+margin_right = 354.826
+margin_bottom = 769.087
+theme = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = -26.0
+margin_top = -8.0
+margin_right = 307.0
+margin_bottom = 695.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Header" type="Label" parent="."]
+margin_left = 25.0
+margin_top = 21.0
+margin_right = 283.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 1 )
+text = "OPTIONS"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OK" type="Button" parent="."]
+margin_left = 72.9957
+margin_top = 642.305
+margin_right = 236.996
+margin_bottom = 674.305
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 2 )
+text = "Done"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="scroll" type="ScrollContainer" parent="."]
+margin_left = 17.0
+margin_top = 87.0
+margin_right = 294.0
+margin_bottom = 608.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vbox" type="VBoxContainer" parent="scroll"]
+margin_right = 277.0
+margin_bottom = 554.0
+custom_constants/separation = 16
+
+[node name="op_level" type="HBoxContainer" parent="scroll/vbox"]
+margin_right = 277.0
+margin_bottom = 26.0
+
+[node name="Label" type="Label" parent="scroll/vbox/op_level"]
+margin_top = 3.0
+margin_right = 205.0
+margin_bottom = 23.0
+text = "Challenge Start Level        "
+
+[node name="level" type="OptionButton" parent="scroll/vbox/op_level"]
+margin_left = 209.0
+margin_right = 238.0
+margin_bottom = 26.0
+
+[node name="op_music" type="HBoxContainer" parent="scroll/vbox"]
+margin_top = 42.0
+margin_right = 277.0
+margin_bottom = 68.0
+
+[node name="Label" type="Label" parent="scroll/vbox/op_music"]
+margin_top = 3.0
+margin_right = 67.0
+margin_bottom = 23.0
+text = "Music     "
+
+[node name="music" type="OptionButton" parent="scroll/vbox/op_music"]
+margin_left = 71.0
+margin_right = 100.0
+margin_bottom = 26.0
+
+[node name="op_trackSelect" type="HBoxContainer" parent="scroll/vbox"]
+margin_top = 84.0
+margin_right = 277.0
+margin_bottom = 110.0
+
+[node name="Label" type="Label" parent="scroll/vbox/op_trackSelect"]
+margin_top = 3.0
+margin_right = 118.0
+margin_bottom = 23.0
+text = "Track Select:    "
+
+[node name="prev" type="Button" parent="scroll/vbox/op_trackSelect"]
+margin_left = 122.0
+margin_right = 164.0
+margin_bottom = 26.0
+text = "<<<"
+
+[node name="next" type="Button" parent="scroll/vbox/op_trackSelect"]
+margin_left = 168.0
+margin_right = 210.0
+margin_bottom = 26.0
+text = ">>>"
+
+[node name="op_nowPlaying" type="HBoxContainer" parent="scroll/vbox"]
+margin_top = 126.0
+margin_right = 277.0
+margin_bottom = 146.0
+
+[node name="Label" type="Label" parent="scroll/vbox/op_nowPlaying"]
+margin_right = 72.0
+margin_bottom = 20.0
+text = "Playing:  "
+
+[node name="current" type="Label" parent="scroll/vbox/op_nowPlaying"]
+margin_left = 76.0
+margin_right = 76.0
+margin_bottom = 20.0
+
+[node name="op_volume" type="Label" parent="scroll/vbox"]
+margin_top = 162.0
+margin_right = 277.0
+margin_bottom = 205.0
+text = "
+ -------------   Volume   -------------"
+
+[node name="op_overallVol" type="HBoxContainer" parent="scroll/vbox"]
+margin_top = 221.0
+margin_right = 277.0
+margin_bottom = 241.0
+
+[node name="Label" type="Label" parent="scroll/vbox/op_overallVol"]
+margin_right = 82.0
+margin_bottom = 20.0
+text = "Overall :    "
+
+[node name="vol" type="HSlider" parent="scroll/vbox/op_overallVol"]
+margin_left = 86.0
+margin_right = 161.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 75, 0 )
+min_value = -40.0
+max_value = 0.0
+step = 3.0
+
+[node name="op_musicVol" type="HBoxContainer" parent="scroll/vbox"]
+margin_top = 257.0
+margin_right = 277.0
+margin_bottom = 277.0
+
+[node name="Label" type="Label" parent="scroll/vbox/op_musicVol"]
+margin_right = 83.0
+margin_bottom = 20.0
+text = "Music:        "
+
+[node name="vol" type="HSlider" parent="scroll/vbox/op_musicVol"]
+margin_left = 87.0
+margin_right = 162.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 75, 0 )
+min_value = -40.0
+max_value = 0.0
+step = 3.0
+
+[node name="op_sfxVol" type="HBoxContainer" parent="scroll/vbox"]
+margin_top = 293.0
+margin_right = 277.0
+margin_bottom = 313.0
+
+[node name="Label" type="Label" parent="scroll/vbox/op_sfxVol"]
+margin_right = 84.0
+margin_bottom = 20.0
+text = "SFX:            "
+
+[node name="vol" type="HSlider" parent="scroll/vbox/op_sfxVol"]
+margin_left = 88.0
+margin_right = 163.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 75, 0 )
+min_value = -40.0
+max_value = 0.0
+step = 3.0
+
+[node name="op_bgColor" type="VBoxContainer" parent="scroll/vbox"]
+margin_top = 329.0
+margin_right = 277.0
+margin_bottom = 554.0
+
+[node name="Label" type="Label" parent="scroll/vbox/op_bgColor"]
+margin_right = 277.0
+margin_bottom = 66.0
+text = " ---------------------------------------
+
+BG Color:"
+align = 1
+
+[node name="cen" type="CenterContainer" parent="scroll/vbox/op_bgColor"]
+margin_top = 70.0
+margin_right = 277.0
+margin_bottom = 225.0
+
+[node name="Control" type="Control" parent="scroll/vbox/op_bgColor/cen"]
+margin_left = 38.0
+margin_right = 238.0
+margin_bottom = 155.0
+rect_min_size = Vector2( 200, 155 )
+rect_clip_content = true
+
+[node name="ColorPicker" type="ColorPicker" parent="scroll/vbox/op_bgColor/cen/Control"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 12.0
+margin_bottom = 12.0
+rect_scale = Vector2( 0.6, 0.6 )
+rect_clip_content = true
+edit_alpha = false
+presets_enabled = false
+presets_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="OK" to="." method="_on_OK_pressed"]
+[connection signal="item_selected" from="scroll/vbox/op_level/level" to="." method="_on_level_item_selected"]
+[connection signal="item_selected" from="scroll/vbox/op_music/music" to="." method="_on_music_item_selected"]
+[connection signal="pressed" from="scroll/vbox/op_trackSelect/prev" to="." method="_on_prev_pressed"]
+[connection signal="pressed" from="scroll/vbox/op_trackSelect/next" to="." method="_on_next_pressed"]
+[connection signal="value_changed" from="scroll/vbox/op_overallVol/vol" to="." method="_on_overallVol_value_changed"]
+[connection signal="value_changed" from="scroll/vbox/op_musicVol/vol" to="." method="_on_musicVol_value_changed"]
+[connection signal="value_changed" from="scroll/vbox/op_sfxVol/vol" to="." method="_on_sfxVol_value_changed"]
+[connection signal="color_changed" from="scroll/vbox/op_bgColor/cen/Control/ColorPicker" to="." method="_on_ColorPicker_color_changed"]

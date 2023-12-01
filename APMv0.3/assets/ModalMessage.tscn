@@ -1,0 +1,263 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://UI/messageSprites.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://ModalMessage.gd" type="Script" id=2]
+[ext_resource path="res://themes/popups.tres" type="Theme" id=3]
+[ext_resource path="res://fonts/Title.tres" type="DynamicFont" id=4]
+[ext_resource path="res://themes/almanac.tres" type="Theme" id=5]
+[ext_resource path="res://themes/button.tres" type="Theme" id=6]
+[ext_resource path="res://fonts/Play-Bold.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=4]
+outline_color = Color( 0.00784314, 0.00784314, 0.00784314, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 0.992157, 0.992157, 1 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 0.466517 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1e-05, 1e-05 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 0.554785 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "reset"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ) ]
+}
+
+[node name="ModalMessage" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.47375
+margin_right = 1.47375
+rect_pivot_offset = Vector2( 185.064, 472.12 )
+theme = ExtResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0.980392 )
+margin_left = -28623.0
+margin_top = 129.0
+margin_right = 28987.0
+margin_bottom = 715.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="center" type="Control" parent="."]
+margin_left = 10.0
+margin_top = 154.055
+margin_right = 363.0
+margin_bottom = 649.055
+
+[node name="vbox" type="VBoxContainer" parent="center"]
+margin_left = 26.0
+margin_top = 29.0
+margin_right = 326.0
+margin_bottom = 495.0
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="center/vbox"]
+margin_right = 300.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 300, 100 )
+custom_fonts/font = ExtResource( 4 )
+text = "ALL-TIME RECORD"
+align = 1
+
+[node name="spriteSpace" type="Label" parent="center/vbox"]
+margin_top = 104.0
+margin_right = 300.0
+margin_bottom = 227.0
+text = "
+
+
+
+
+"
+align = 1
+
+[node name="center" type="CenterContainer" parent="center/vbox"]
+margin_top = 231.0
+margin_right = 300.0
+margin_bottom = 311.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="message" type="Label" parent="center/vbox/center"]
+margin_right = 300.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 300, 80 )
+custom_fonts/font = SubResource( 1 )
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="space2" type="Label" parent="center/vbox"]
+margin_top = 315.0
+margin_right = 300.0
+margin_bottom = 333.0
+align = 1
+
+[node name="response" type="CenterContainer" parent="center/vbox"]
+margin_top = 337.0
+margin_right = 300.0
+margin_bottom = 367.0
+theme = ExtResource( 6 )
+
+[node name="confirm" type="Button" parent="center/vbox/response"]
+margin_left = 100.0
+margin_right = 200.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 100, 30 )
+theme = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "OK"
+
+[node name="GridContainer" type="GridContainer" parent="center/vbox/response"]
+margin_left = 123.0
+margin_top = 15.0
+margin_right = 177.0
+margin_bottom = 15.0
+custom_constants/vseparation = 25
+columns = 3
+
+[node name="opt1" type="Button" parent="center/vbox/response/GridContainer"]
+visible = false
+margin_right = 100.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 100, 0 )
+text = "opt"
+
+[node name="space" type="Control" parent="center/vbox/response/GridContainer"]
+margin_right = 25.0
+rect_min_size = Vector2( 25, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="opt2" type="Button" parent="center/vbox/response/GridContainer"]
+visible = false
+margin_left = 29.0
+margin_right = 129.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 100, 0 )
+text = "opt"
+
+[node name="opt3" type="Button" parent="center/vbox/response/GridContainer"]
+visible = false
+margin_left = 49.0
+margin_right = 94.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 100, 0 )
+text = "opt"
+
+[node name="space3" type="Control" parent="center/vbox/response/GridContainer"]
+margin_left = 29.0
+margin_right = 54.0
+rect_min_size = Vector2( 25, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="opt4" type="Button" parent="center/vbox/response/GridContainer"]
+visible = false
+margin_left = 58.0
+margin_right = 103.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 100, 0 )
+text = "opt"
+
+[node name="messageSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 184, 331.025 )
+scale = Vector2( 3, 3 )
+frames = ExtResource( 1 )
+animation = "bombs Away"
+frame = 1
+playing = true
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/close = SubResource( 6 )
+anims/open = SubResource( 7 )
+anims/reset = SubResource( 8 )
+
+[node name="pageButtons" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="back" type="Button" parent="pageButtons"]
+margin_left = 17.7808
+margin_top = 653.258
+margin_right = 67.7808
+margin_bottom = 693.258
+text = "<"
+
+[node name="forward" type="Button" parent="pageButtons"]
+margin_left = 303.551
+margin_top = 653.258
+margin_right = 353.551
+margin_bottom = 693.258
+text = ">"
+
+[node name="container" type="Node2D" parent="."]
+position = Vector2( 183.305, 334.928 )
+scale = Vector2( 2.5, 2.5 )
+
+[connection signal="pressed" from="center/vbox/response/confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="center/vbox/response/GridContainer/opt1" to="." method="_on_opt1_pressed"]
+[connection signal="pressed" from="center/vbox/response/GridContainer/opt2" to="." method="_on_opt2_pressed"]
+[connection signal="pressed" from="center/vbox/response/GridContainer/opt3" to="." method="_on_opt3_pressed"]
+[connection signal="pressed" from="center/vbox/response/GridContainer/opt4" to="." method="_on_opt4_pressed"]
+[connection signal="pressed" from="pageButtons/back" to="." method="_on_page_pressed" binds= [ -1 ]]
+[connection signal="pressed" from="pageButtons/forward" to="." method="_on_page_pressed" binds= [ 1 ]]

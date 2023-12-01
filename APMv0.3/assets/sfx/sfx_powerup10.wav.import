@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_powerup10.wav-92ad052db1606c2f71fd2fe66e5b763a.sample"
+
+[deps]
+
+source_file="res://sfx/sfx_powerup10.wav"
+dest_files=[ "res://.import/sfx_powerup10.wav-92ad052db1606c2f71fd2fe66e5b763a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

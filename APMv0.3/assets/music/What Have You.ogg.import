@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/What Have You.ogg-c68e4673a7c2334295c1504e0a5d5e36.oggstr"
+
+[deps]
+
+source_file="res://music/What Have You.ogg"
+dest_files=[ "res://.import/What Have You.ogg-c68e4673a7c2334295c1504e0a5d5e36.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
