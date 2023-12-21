@@ -1,0 +1,107 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Zones/temple.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/ui/menuIcon.png" type="Texture" id=2]
+[ext_resource path="res://Menu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Quest.gd" type="Script" id=4]
+[ext_resource path="res://UI/QuestChallengePanel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://characters/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://MovePad.tscn" type="PackedScene" id=7]
+
+[sub_resource type="ShaderMaterial" id=1]
+
+[sub_resource type="Animation" id=2]
+tracks/0/type = "value"
+tracks/0/path = NodePath("ui/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+tracks/0/type = "value"
+tracks/0/path = NodePath("ui/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[node name="Quest" type="Node2D"]
+material = SubResource( 1 )
+position = Vector2( 1609.44, -975.179 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 4 )
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
+position = Vector2( -671.011, 174.189 )
+
+[node name="temple" parent="." instance=ExtResource( 1 )]
+position = Vector2( -3.20612, 0.87439 )
+
+[node name="ui" type="CanvasLayer" parent="."]
+
+[node name="menuButton" type="TextureButton" parent="ui"]
+visible = false
+margin_left = 12.0
+margin_top = 21.0
+margin_right = 134.0
+margin_bottom = 144.0
+rect_scale = Vector2( 0.4, 0.3 )
+texture_normal = ExtResource( 2 )
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MovePad" parent="ui" instance=ExtResource( 7 )]
+position = Vector2( 1607.96, 494.094 )
+scale = Vector2( 2, 2 )
+
+[node name="ColorRect" type="ColorRect" parent="ui"]
+modulate = Color( 0, 0, 0, 0 )
+margin_left = -1273.0
+margin_top = -2619.0
+margin_right = 5507.0
+margin_bottom = 5577.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+
+[node name="Menu" parent="ui" instance=ExtResource( 3 )]
+visible = false
+
+[node name="RESET" parent="ui/Menu" index="2"]
+visible = false
+
+[node name="QUIT" parent="ui/Menu" index="4"]
+visible = false
+
+[node name="QuestChallengePanel" parent="ui" instance=ExtResource( 5 )]
+visible = false
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/fadeToBlack = SubResource( 2 )
+anims/reverseFadeToBlack = SubResource( 3 )
+
+[node name="playerPosition" type="Position2D" parent="."]
+position = Vector2( -235.72, 1211.24 )
+
+[connection signal="pressed" from="ui/menuButton" to="." method="_on_menuButton_pressed"]
+[connection signal="pressed" from="ui/Menu/CONTINUE" to="." method="_on_CONTINUE_pressed"]
+[connection signal="pressed" from="ui/Menu/QUEST_CHALLENGES" to="." method="_on_QUEST_CHALLENGES_pressed"]
+[connection signal="pressed" from="ui/Menu/MAIN MENU" to="." method="_on_MAIN_MENU_pressed"]
+[connection signal="pressed" from="ui/Menu/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="ui/Menu/HELP" to="." method="_on_HELP_pressed"]
+
+[editable path="ui/Menu"]

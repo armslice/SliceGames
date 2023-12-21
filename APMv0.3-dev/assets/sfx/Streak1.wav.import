@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Streak1.wav-61dc606143b6b0860745602d677ad016.sample"
+
+[deps]
+
+source_file="res://sfx/Streak1.wav"
+dest_files=[ "res://.import/Streak1.wav-61dc606143b6b0860745602d677ad016.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

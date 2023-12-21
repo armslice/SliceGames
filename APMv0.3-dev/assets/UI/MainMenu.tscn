@@ -1,0 +1,253 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://sprites/Underworld.png" type="Texture" id=1]
+[ext_resource path="res://Profile.tres" type="Theme" id=2]
+[ext_resource path="res://mainMenuButtonEffects.gd" type="Script" id=3]
+[ext_resource path="res://sprites/Land.png" type="Texture" id=4]
+[ext_resource path="res://fonts/PassionOne-Bold.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://sprites/Sky.png" type="Texture" id=6]
+[ext_resource path="res://sprites/Cosmos.png" type="Texture" id=7]
+[ext_resource path="res://sprites/spinner.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=3]
+size = 80
+outline_size = 3
+outline_color = Color( 0.682353, 0.678431, 0.686275, 1 )
+extra_spacing_bottom = -20
+font_data = ExtResource( 5 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "effect"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:custom_fonts/font:outline_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.2, 2.6, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.682353, 0.678431, 0.686275, 1 ), Color( 0.807843, 0, 0, 1 ), Color( 0, 0.6, 0.0509804, 1 ), Color( 0, 0.101961, 0.639216, 1 ), Color( 0.682353, 0.682353, 0.682353, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "reset"
+
+[sub_resource type="DynamicFont" id=6]
+size = 40
+outline_size = 3
+font_data = ExtResource( 5 )
+
+[sub_resource type="Gradient" id=7]
+offsets = PoolRealArray( 0.0116618, 0.169096, 0.346939, 0.693878, 0.973761 )
+colors = PoolColorArray( 0.835938, 0.528992, 0, 1, 0.997932, 0.639485, 0.00532083, 1, 0.964844, 0.746246, 0.0904541, 1, 1, 0.825928, 0.03125, 1, 0.773438, 0.489441, 0, 1 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 7 )
+
+[node name="MainMenu" type="Control"]
+visible = false
+modulate = Color( 1, 1, 1, 0.898039 )
+margin_right = 382.0
+margin_bottom = 843.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_left = -19.2221
+margin_top = -9.73325
+margin_right = 394.778
+margin_bottom = 836.267
+color = Color( 0.0117647, 0.0117647, 0.207843, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_left = 40.0
+margin_top = 24.0
+margin_right = 344.0
+margin_bottom = 237.0
+custom_fonts/font = SubResource( 3 )
+text = "ALCHEMY
+PUZZLE
+MASTER"
+align = 1
+
+[node name="titleEffect" type="AnimationPlayer" parent="Title"]
+anims/effect = SubResource( 4 )
+anims/reset = SubResource( 5 )
+
+[node name="center" type="CenterContainer" parent="."]
+margin_left = 64.0
+margin_top = 242.0
+margin_right = 314.0
+margin_bottom = 740.0
+
+[node name="buttons" type="VBoxContainer" parent="center"]
+margin_top = 9.0
+margin_right = 250.0
+margin_bottom = 489.0
+theme = ExtResource( 2 )
+custom_constants/separation = 5
+script = ExtResource( 3 )
+
+[node name="Quest" type="TextureButton" parent="center/buttons"]
+margin_right = 250.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 200, 75 )
+texture_normal = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="center/buttons/Quest"]
+margin_right = 256.0
+margin_bottom = 72.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "QUEST"
+align = 1
+valign = 1
+
+[node name="Build" type="TextureButton" parent="center/buttons"]
+self_modulate = Color( 1.2, 1.2, 1.3, 1 )
+margin_top = 80.0
+margin_right = 250.0
+margin_bottom = 155.0
+rect_min_size = Vector2( 200, 75 )
+texture_normal = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="center/buttons/Build"]
+margin_right = 256.0
+margin_bottom = 72.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "BUILD"
+align = 1
+valign = 1
+
+[node name="Breakdown" type="TextureButton" parent="center/buttons"]
+margin_top = 160.0
+margin_right = 250.0
+margin_bottom = 235.0
+rect_min_size = Vector2( 200, 75 )
+texture_normal = ExtResource( 4 )
+
+[node name="Label2" type="Label" parent="center/buttons/Breakdown"]
+margin_left = -5.89441
+margin_top = -0.320099
+margin_right = 257.106
+margin_bottom = 71.6799
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "BREAKDOWN"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Challenge" type="TextureButton" parent="center/buttons"]
+margin_top = 240.0
+margin_right = 250.0
+margin_bottom = 315.0
+rect_min_size = Vector2( 250, 75 )
+texture_normal = ExtResource( 1 )
+
+[node name="Label3" type="Label" parent="center/buttons/Challenge"]
+margin_left = -6.57867
+margin_top = 18.6767
+margin_right = 256.421
+margin_bottom = 111.677
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "CHALLENGE
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VS" type="TextureButton" parent="center/buttons"]
+margin_top = 320.0
+margin_right = 250.0
+margin_bottom = 395.0
+rect_min_size = Vector2( 250, 75 )
+texture_normal = SubResource( 8 )
+expand = true
+
+[node name="Label3" type="Label" parent="center/buttons/VS"]
+margin_left = -6.57867
+margin_top = 18.6767
+margin_right = 256.421
+margin_bottom = 111.677
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "VS
+"
+align = 1
+valign = 1
+
+[node name="VSSpinner" type="TextureProgress" parent="center/buttons/VS"]
+unique_name_in_owner = true
+margin_left = 87.0537
+margin_top = 1.67413
+margin_right = 167.054
+margin_bottom = 73.6741
+texture_progress = ExtResource( 8 )
+fill_mode = 4
+nine_patch_stretch = true
+
+[node name="Control" type="Control" parent="center/buttons"]
+margin_top = 400.0
+margin_right = 250.0
+margin_bottom = 425.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="center" type="CenterContainer" parent="center/buttons"]
+margin_top = 430.0
+margin_right = 250.0
+margin_bottom = 480.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hbox" type="HBoxContainer" parent="center/buttons/center"]
+margin_left = 12.0
+margin_right = 237.0
+margin_bottom = 50.0
+custom_constants/separation = 10
+
+[node name="Options" type="Button" parent="center/buttons/center/hbox"]
+margin_right = 115.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+text = "Options"
+
+[node name="Help" type="Button" parent="center/buttons/center/hbox"]
+margin_left = 125.0
+margin_right = 225.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+text = "Help"
+
+[node name="credit" type="Label" parent="."]
+margin_left = 57.0425
+margin_top = 758.766
+margin_right = 313.043
+margin_bottom = 802.766
+text = "© Slice Games 2023 - Music By DJ Noah"
+align = 1
+valign = 2
+
+[connection signal="mouse_entered" from="center/buttons/Quest" to="center/buttons" method="_on_Quest_mouse_entered"]
+[connection signal="mouse_exited" from="center/buttons/Quest" to="center/buttons" method="_on_Quest_mouse_exited"]
+[connection signal="mouse_entered" from="center/buttons/Build" to="center/buttons" method="_on_Build_mouse_entered"]
+[connection signal="mouse_exited" from="center/buttons/Build" to="center/buttons" method="_on_Build_mouse_exited"]
+[connection signal="mouse_entered" from="center/buttons/Breakdown" to="center/buttons" method="_on_Breakdown_mouse_entered"]
+[connection signal="mouse_exited" from="center/buttons/Breakdown" to="center/buttons" method="_on_Breakdown_mouse_exited"]
+[connection signal="mouse_entered" from="center/buttons/Challenge" to="center/buttons" method="_on_Challenge_mouse_entered"]
+[connection signal="mouse_exited" from="center/buttons/Challenge" to="center/buttons" method="_on_Challenge_mouse_exited"]
+[connection signal="mouse_entered" from="center/buttons/VS" to="center/buttons" method="_on_Challenge_mouse_entered"]
+[connection signal="mouse_exited" from="center/buttons/VS" to="center/buttons" method="_on_Challenge_mouse_exited"]
