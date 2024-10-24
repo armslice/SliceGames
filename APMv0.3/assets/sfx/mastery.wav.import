@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mastery.wav-70b0c7d3b216252a7a75a73f7af22705.sample"
+
+[deps]
+
+source_file="res://sfx/mastery.wav"
+dest_files=[ "res://.import/mastery.wav-70b0c7d3b216252a7a75a73f7af22705.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

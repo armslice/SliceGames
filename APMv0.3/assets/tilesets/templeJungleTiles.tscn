@@ -1,0 +1,588 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://sprites/tiles/TempleJungle.png" type="Texture" id=1]
+
+[node name="jungleTemple" type="Node2D"]
+
+[node name="candleL" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 26, 26 )
+
+[node name="candleR" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 182, 0, 26, 26 )
+
+[node name="doorL" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 156, 104, 26, 78 )
+
+[node name="doorR" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 182, 104, 26, 78 )
+
+[node name="TcornerL" type="Sprite" parent="."]
+position = Vector2( 0, 1 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 26, 26, 52, 52 )
+
+[node name="TcornerR" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 130, 26, 52, 52 )
+
+[node name="TsidecornerL" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 26, 52, 26, 26 )
+
+[node name="TsidecornerL2" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 78, 26, 26 )
+
+[node name="TsidecornerR" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 156, 52, 26, 26 )
+
+[node name="Tfloor" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 52, 52, 104, 52 )
+
+[node name="tf1" type="Sprite" parent="."]
+position = Vector2( 0, 1 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 52, 52, 26, 26 )
+
+[node name="tf2" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 78, 52, 26, 26 )
+
+[node name="tf3" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 104, 52, 26, 26 )
+
+[node name="tf4" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 130, 52, 26, 26 )
+
+[node name="tf5" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 26, 78, 26, 26 )
+
+[node name="tf6" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 52, 78, 26, 26 )
+
+[node name="tf7" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 78, 78, 26, 26 )
+
+[node name="tf8" type="Sprite" parent="."]
+position = Vector2( 0, -4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 104, 78, 26, 26 )
+
+[node name="tf9" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 130, 78, 26, 26 )
+
+[node name="tf10" type="Sprite" parent="."]
+position = Vector2( 0, -3 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 156, 78, 26, 26 )
+
+[node name="trevtsideclean" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 390, 130, 26, 26 )
+
+[node name="tupclean" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 416, 130, 26, 26 )
+
+[node name="tbotupcornerL" type="Sprite" parent="."]
+position = Vector2( 0, 1 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 52, 26, 26, 26 )
+
+[node name="tbotupcorner1" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 78, 26, 26, 26 )
+
+[node name="tbotupcorner2" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 104, 26, 26, 26 )
+
+[node name="tbotupcornerR" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 130, 26, 26, 26 )
+
+[node name="upcornerL" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 52, 0, 26, 26 )
+
+[node name="up1" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 78, 0, 26, 26 )
+
+[node name="up2" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 104, 0, 26, 26 )
+
+[node name="upcornerR" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 130, 0, 26, 26 )
+
+[node name="tbotsidecornerL" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 26, 26, 26, 26 )
+
+[node name="botsidecornerR" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 156, 26, 26, 26 )
+
+[node name="tside1" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 26, 26, 26 )
+
+[node name="tside2" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 182, 26, 26, 26 )
+
+[node name="tbotsideL" type="Sprite" parent="."]
+position = Vector2( 0, -4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 52, 26, 26 )
+
+[node name="tbotsideR" type="Sprite" parent="."]
+position = Vector2( 0, -4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 182, 52, 26, 26 )
+
+[node name="TrevCornL" type="Sprite" parent="."]
+position = Vector2( 0, -4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 234, 104, 52, 52 )
+
+[node name="TrevCornL1" type="Sprite" parent="."]
+position = Vector2( 0, -4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 208, 104, 26, 26 )
+
+[node name="TrevCornL2" type="Sprite" parent="."]
+position = Vector2( 0, -4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 234, 130, 26, 26 )
+
+[node name="TrevCornR1" type="Sprite" parent="."]
+position = Vector2( 0, -4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 390, 104, 26, 26 )
+
+[node name="TrevCornR2" type="Sprite" parent="."]
+position = Vector2( 0, -4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 364, 130, 26, 26 )
+
+[node name="TrevCornsideR" type="Sprite" parent="."]
+position = Vector2( 0, -4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 234, 78, 26, 26 )
+
+[node name="TrevCornsideL" type="Sprite" parent="."]
+position = Vector2( 0, -4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 364, 78, 26, 26 )
+
+[node name="TrevCornR" type="Sprite" parent="."]
+position = Vector2( 0, -4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 338, 104, 52, 52 )
+
+[node name="TrevSideCornerR" type="Sprite" parent="."]
+position = Vector2( 0, -4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 390, 78, 26, 26 )
+
+[node name="TwallBupcornR" type="Sprite" parent="."]
+position = Vector2( 0, -4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 260, 104, 26, 26 )
+
+[node name="TwallBupbotcorn1" type="Sprite" parent="."]
+position = Vector2( 0, -4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 286, 104, 26, 26 )
+
+[node name="TwallBupbotcorn2" type="Sprite" parent="."]
+position = Vector2( 0, -4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 312, 104, 26, 26 )
+
+[node name="TwallupBotCornR" type="Sprite" parent="."]
+position = Vector2( 0, -4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 338, 104, 26, 26 )
+
+[node name="TfloorB2" type="Sprite" parent="."]
+position = Vector2( 0, -8 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 260, 130, 26, 26 )
+
+[node name="TfloorB3" type="Sprite" parent="."]
+position = Vector2( 0, -8 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 286, 130, 26, 26 )
+
+[node name="TfloorB4" type="Sprite" parent="."]
+position = Vector2( 0, -8 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 312, 130, 26, 26 )
+
+[node name="TpillarL" type="Sprite" parent="."]
+position = Vector2( 0, -8 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 234, 0, 52, 78 )
+
+[node name="TpillarL2" type="Sprite" parent="."]
+position = Vector2( 0, -8 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 234, 0, 52, 26 )
+
+[node name="TpillarC" type="Sprite" parent="."]
+position = Vector2( 0, -8 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 286, 26, 52, 52 )
+
+[node name="TpillarC2" type="Sprite" parent="."]
+position = Vector2( 0, -8 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 286, 0, 52, 26 )
+
+[node name="TpillarR" type="Sprite" parent="."]
+position = Vector2( 0, -8 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 338, 0, 52, 78 )
+
+[node name="TpillarR2" type="Sprite" parent="."]
+position = Vector2( 0, -8 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 338, 0, 52, 26 )
+
+[node name="jfloor" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 104, 286, 104, 52 )
+
+[node name="jfloor2" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 104, 286, 26, 26 )
+
+[node name="jfloor3" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 130, 286, 26, 26 )
+
+[node name="jfloor4" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 156, 286, 26, 26 )
+
+[node name="jfloor5" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 182, 286, 26, 26 )
+
+[node name="jfloor6" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 104, 312, 26, 26 )
+
+[node name="jfloor7" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 130, 312, 26, 26 )
+
+[node name="jfloor8" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 156, 312, 26, 26 )
+
+[node name="jfloor9" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 182, 312, 26, 26 )
+
+[node name="jfloor10" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 78, 260, 26, 26 )
+
+[node name="jfloor11" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 104, 260, 26, 26 )
+
+[node name="jfloor12" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 130, 260, 26, 26 )
+
+[node name="jfloor13" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 156, 260, 26, 26 )
+
+[node name="jfloor14" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 182, 260, 26, 26 )
+
+[node name="jfloor15" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 208, 260, 26, 26 )
+
+[node name="jfloor16" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 208, 286, 26, 26 )
+
+[node name="jfloor17" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 208, 312, 26, 26 )
+
+[node name="jfloor18" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 208, 338, 26, 26 )
+
+[node name="jfloor19" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 182, 338, 26, 26 )
+
+[node name="jfloor20" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 156, 338, 26, 26 )
+
+[node name="jfloor21" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 130, 338, 26, 26 )
+
+[node name="jfloor22" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 104, 338, 26, 26 )
+
+[node name="jfloor23" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 78, 338, 26, 26 )
+
+[node name="jfloor24" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 78, 312, 26, 26 )
+
+[node name="jfloor25" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 78, 286, 26, 26 )
+
+[node name="jfloor26" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 78, 260, 52, 52 )
+
+[node name="jfloor27" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 182, 260, 52, 52 )
+
+[node name="jfloor28" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 78, 312, 52, 52 )
+
+[node name="jfloor29" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 182, 312, 52, 52 )
+
+[node name="jfloor30" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 78, 234, 26, 26 )
+
+[node name="jfloor31" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 104, 234, 26, 26 )
+
+[node name="jfloor32" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 130, 234, 26, 26 )
+
+[node name="jfloor33" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 156, 234, 26, 26 )
+
+[node name="jfloor34" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 182, 234, 26, 26 )
+
+[node name="jfloor35" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 234, 286, 26, 26 )
+
+[node name="jfloor36" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 234, 312, 26, 26 )
+
+[node name="jfloor37" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 260, 312, 26, 26 )
+
+[node name="jfloor38" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 234, 338, 26, 26 )
+
+[node name="jfloor39" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 260, 338, 26, 26 )
+
+[node name="jfloor40" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 260, 338, 26, 26 )
+
+[node name="jfloor41" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 130, 390, 26, 26 )
+
+[node name="jfloor42" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 156, 390, 26, 26 )
+
+[node name="jfloor43" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 130, 416, 26, 26 )
+
+[node name="jfloor44" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 156, 416, 26, 26 )

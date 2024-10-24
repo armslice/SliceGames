@@ -1,0 +1,33 @@
+[gd_scene format=2]
+
+[node name="GraphEdit" type="GraphEdit"]
+margin_left = 39.7112
+margin_top = 155.398
+margin_right = 352.711
+margin_bottom = 423.398
+scroll_offset = Vector2( -167, -240 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GraphNode2" type="GraphNode" parent="."]
+margin_left = 29.0
+margin_top = 58.0
+margin_right = 105.0
+margin_bottom = 122.0
+mouse_filter = 1
+title = "fire"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GraphNode" type="GraphNode" parent="."]
+margin_left = 124.162
+margin_top = 79.3578
+margin_right = 209.162
+margin_bottom = 140.358
+mouse_filter = 1
+title = "fire"
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,880 @@
+[gd_scene load_steps=63 format=2]
+
+[ext_resource path="res://sprites/Elements/frog/frog1.png" type="Texture" id=1]
+[ext_resource path="res://sprites/Elements/eel/eel1.png" type="Texture" id=2]
+[ext_resource path="res://VSMatch.gd" type="Script" id=3]
+[ext_resource path="res://fonts/console.tres" type="DynamicFontData" id=4]
+[ext_resource path="res://sprites/Elements/eel/eel2.png" type="Texture" id=5]
+[ext_resource path="res://MatchCharacter.gd" type="Script" id=6]
+[ext_resource path="res://fonts/Play-Bold.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://aiOpponent.gd" type="Script" id=8]
+[ext_resource path="res://sprites/chars/VS/VSAlchemist/VSAlchemist.png" type="Texture" id=9]
+[ext_resource path="res://MatchPlayerSprite.gd" type="Script" id=10]
+[ext_resource path="res://themes/button.tres" type="Theme" id=11]
+[ext_resource path="res://UI/LongPressButton.gd" type="Script" id=12]
+
+[sub_resource type="Shader" id=40]
+code = "shader_type canvas_item;
+
+uniform vec4 robe : hint_color;
+uniform vec4 outline : hint_color;
+uniform vec4 shadow : hint_color;
+//uniform vec4 pants : hint_color;
+//uniform vec4 skin : hint_color;
+
+void fragment(){
+	vec4 color = texture(TEXTURE,UV);
+	
+	if (color == vec4(0,0,0,1)){
+		COLOR = robe;
+	}
+	
+	else if (color == vec4(1,0,0,1)){
+		COLOR = shadow
+	}
+	
+		
+	else if (color == vec4(1.0,1.0,1.0,1.0)){
+		COLOR = outline;
+	}
+	
+	else 
+		COLOR = color;	
+		
+}"
+
+[sub_resource type="ShaderMaterial" id=41]
+shader = SubResource( 40 )
+shader_param/robe = Color( 0.541176, 0, 0, 1 )
+shader_param/outline = Color( 0.196078, 0.0235294, 0.0235294, 1 )
+shader_param/shadow = null
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 35, 28 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 32, 23 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 32, 23 )
+
+[sub_resource type="SpriteFrames" id=22]
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 19 ) ],
+"loop": true,
+"name": "p1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 21 ) ],
+"loop": true,
+"name": "p2",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=34]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2, 2 ) ]
+}
+
+[sub_resource type="Animation" id=38]
+resource_name = "attack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2, 2 ), Vector2( 2.5, 2.5 ) ]
+}
+
+[sub_resource type="Animation" id=35]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0.721569, 0.6 ), Color( 0, 0, 0.721569, 0 ) ]
+}
+
+[sub_resource type="Animation" id=42]
+resource_name = "select"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2, 2 ), Vector2( 2.5, 2.5 ) ]
+}
+
+[sub_resource type="Shader" id=48]
+code = "shader_type canvas_item;
+
+uniform vec4 robe : hint_color;
+uniform vec4 outline : hint_color;
+uniform vec4 shadow : hint_color;
+//uniform vec4 pants : hint_color;
+//uniform vec4 skin : hint_color;
+
+void fragment(){
+	vec4 color = texture(TEXTURE,UV);
+	
+	if (color == vec4(0,0,0,1)){
+		COLOR = robe;
+	}
+	
+	else if (color == vec4(1,0,0,1)){
+		COLOR = shadow
+	}
+	
+		
+	else if (color == vec4(1.0,1.0,1.0,1.0)){
+		COLOR = outline;
+	}
+	
+	else 
+		COLOR = color;	
+		
+}"
+
+[sub_resource type="ShaderMaterial" id=49]
+shader = SubResource( 48 )
+shader_param/robe = Color( 0.541176, 0, 0, 1 )
+shader_param/outline = Color( 0.196078, 0.0235294, 0.0235294, 1 )
+shader_param/shadow = null
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 35, 28 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 32, 23 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 32, 23 )
+
+[sub_resource type="SpriteFrames" id=47]
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 44 ) ],
+"loop": true,
+"name": "p1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 45 ), SubResource( 46 ), SubResource( 46 ) ],
+"loop": true,
+"name": "p2",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=36]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=39]
+resource_name = "attack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2, 2 ), Vector2( 2.5, 2.5 ) ]
+}
+
+[sub_resource type="Animation" id=37]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0.721569, 0.6 ), Color( 0, 0, 0.721569, 0 ) ]
+}
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.027451, 0.0196078, 0.0509804, 0.976471 )
+
+[sub_resource type="DynamicFontData" id=12]
+font_path = "res://fonts/Play-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=13]
+font_data = SubResource( 12 )
+
+[sub_resource type="Theme" id=14]
+default_font = SubResource( 13 )
+Panel/styles/panel = SubResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.109804, 0.109804, 0.109804, 0.972549 )
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://fonts/Play-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=16]
+size = 36
+extra_spacing_bottom = -6
+font_data = SubResource( 2 )
+
+[sub_resource type="Theme" id=17]
+default_font = SubResource( 16 )
+Panel/styles/panel = SubResource( 15 )
+
+[sub_resource type="Gradient" id=9]
+colors = PoolColorArray( 0, 0, 0, 1, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=10]
+gradient = SubResource( 9 )
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0, 0.0058309, 0.434402, 0.988338 )
+colors = PoolColorArray( 0, 0.311875, 1, 1, 0, 0.354647, 0.78375, 1, 0, 0.537921, 0.760313, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=11]
+gradient = SubResource( 4 )
+width = 100
+
+[sub_resource type="DynamicFont" id=18]
+size = 20
+font_data = ExtResource( 4 )
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 18 )
+Panel/styles/panel = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=33]
+size = 32
+font_data = ExtResource( 7 )
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("container/Control/PlayerStats/Counters:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("container/Control/clock:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("container/Control/clock:rect_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("container/Control/OpponentStats/Counters:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("matchMessage:rect_scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("matchMessage:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("container/Control/clock:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "showClock"
+tracks/0/type = "value"
+tracks/0/path = NodePath("container/Control/clock:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.65 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("container/Control/clock:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("container/Control/clock:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "showCounters"
+tracks/0/type = "value"
+tracks/0/path = NodePath("container/Control/PlayerStats/Counters:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.58 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("container/Control/OpponentStats/Counters:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.58 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "showMessage"
+tracks/0/type = "value"
+tracks/0/path = NodePath("matchMessage:rect_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.48 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("matchMessage:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.28 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=23]
+size = 24
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=24]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=25]
+bg_color = Color( 0.839216, 0.839216, 0.839216, 1 )
+border_width_left = 10
+border_width_right = 10
+border_color = Color( 0.839216, 0.839216, 0.839216, 1 )
+
+[sub_resource type="StyleBoxFlat" id=26]
+bg_color = Color( 0.270588, 0.270588, 0.270588, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.0235294, 0.0196078, 0.0196078, 0.415686 )
+
+[sub_resource type="StyleBoxFlat" id=27]
+bg_color = Color( 0.811765, 0.811765, 0.811765, 1 )
+
+[sub_resource type="StyleBoxFlat" id=28]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=29]
+bg_color = Color( 0.717647, 0.717647, 0.717647, 1 )
+
+[sub_resource type="DynamicFont" id=30]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="Theme" id=31]
+default_font = SubResource( 30 )
+Button/colors/font_color = Color( 0, 0, 0, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
+Button/colors/font_color_pressed = Color( 0.0352941, 0.0352941, 0.0352941, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = SubResource( 23 )
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = SubResource( 24 )
+Button/styles/normal = SubResource( 25 )
+Button/styles/pressed = null
+Panel/styles/panel = SubResource( 26 )
+TabContainer/colors/font_color_bg = Color( 0.69, 0.69, 0.69, 1 )
+TabContainer/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+TabContainer/colors/font_color_fg = Color( 0.94, 0.94, 0.94, 1 )
+TabContainer/constants/hseparation = 4
+TabContainer/constants/label_valign_bg = 2
+TabContainer/constants/label_valign_fg = 0
+TabContainer/constants/side_margin = 8
+TabContainer/constants/top_margin = 24
+TabContainer/fonts/font = SubResource( 23 )
+TabContainer/icons/decrement = null
+TabContainer/icons/decrement_highlight = null
+TabContainer/icons/increment = null
+TabContainer/icons/increment_highlight = null
+TabContainer/icons/menu = null
+TabContainer/icons/menu_highlight = null
+TabContainer/styles/panel = SubResource( 5 )
+TabContainer/styles/tab_bg = null
+TabContainer/styles/tab_disabled = null
+TabContainer/styles/tab_fg = null
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/styles/grabber = SubResource( 27 )
+VScrollBar/styles/grabber_highlight = SubResource( 28 )
+VScrollBar/styles/grabber_pressed = SubResource( 29 )
+VScrollBar/styles/scroll = null
+VScrollBar/styles/scroll_focus = null
+
+[sub_resource type="Gradient" id=50]
+colors = PoolColorArray( 0.18709, 0.18709, 0.18709, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture2D" id=51]
+gradient = SubResource( 50 )
+
+[node name="VSMatch" type="Node2D"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 389.809, 151.151 ]
+}
+
+[node name="container" type="Node2D" parent="."]
+
+[node name="Player" type="Node2D" parent="container"]
+position = Vector2( 34.6854, 151.708 )
+script = ExtResource( 6 )
+
+[node name="sprite" type="AnimatedSprite" parent="container/Player"]
+material = SubResource( 41 )
+position = Vector2( 56.3149, -2.74471 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 22 )
+animation = "1"
+playing = true
+offset = Vector2( 0, -13 )
+script = ExtResource( 10 )
+
+[node name="anim" type="AnimationPlayer" parent="container/Player"]
+anims/RESET = SubResource( 34 )
+anims/attack = SubResource( 38 )
+anims/die = SubResource( 35 )
+anims/select = SubResource( 42 )
+
+[node name="Opponent" type="Node2D" parent="container"]
+position = Vector2( 288.978, 150.502 )
+script = ExtResource( 6 )
+isPlayer = false
+
+[node name="sprite" type="AnimatedSprite" parent="container/Opponent"]
+material = SubResource( 49 )
+position = Vector2( -5, 0 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 47 )
+animation = "1"
+playing = true
+offset = Vector2( 0, -13 )
+flip_h = true
+script = ExtResource( 10 )
+
+[node name="anim" type="AnimationPlayer" parent="container/Opponent"]
+anims/RESET = SubResource( 36 )
+anims/attack = SubResource( 39 )
+anims/die = SubResource( 37 )
+
+[node name="Control" type="Control" parent="container"]
+margin_right = 40.0
+margin_bottom = 40.0
+theme = SubResource( 14 )
+
+[node name="clock" type="Label" parent="container/Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 126.0
+margin_top = 20.0
+margin_right = 243.0
+margin_bottom = 64.0
+rect_scale = Vector2( 1e-05, 1e-05 )
+rect_pivot_offset = Vector2( 58.5, 0 )
+theme = SubResource( 17 )
+text = "00"
+align = 1
+
+[node name="PlayerStats" type="Control" parent="container/Control"]
+unique_name_in_owner = true
+margin_top = 42.4569
+margin_right = 40.0
+margin_bottom = 82.4569
+
+[node name="userName" type="Label" parent="container/Control/PlayerStats"]
+margin_left = 22.0
+margin_top = 137.0
+margin_right = 179.0
+margin_bottom = 156.0
+
+[node name="health" type="HBoxContainer" parent="container/Control/PlayerStats"]
+margin_left = 22.0
+margin_top = 164.391
+margin_right = 165.0
+margin_bottom = 189.391
+
+[node name="hpLabel" type="Label" parent="container/Control/PlayerStats/health"]
+margin_top = 3.0
+margin_right = 22.0
+margin_bottom = 22.0
+text = "HP"
+align = 1
+
+[node name="hpBar" type="TextureProgress" parent="container/Control/PlayerStats/health"]
+margin_left = 26.0
+margin_right = 126.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 100, 25 )
+value = 100.0
+texture_progress = SubResource( 10 )
+nine_patch_stretch = true
+
+[node name="speed" type="HBoxContainer" parent="container/Control/PlayerStats"]
+margin_left = 22.0
+margin_top = 192.004
+margin_right = 165.0
+margin_bottom = 211.004
+
+[node name="speedLabel" type="Label" parent="container/Control/PlayerStats/speed"]
+margin_right = 46.0
+margin_bottom = 19.0
+rect_pivot_offset = Vector2( 73.8892, 17.8631 )
+text = "speed"
+align = 1
+
+[node name="speedBar" type="TextureProgress" parent="container/Control/PlayerStats/speed"]
+margin_left = 50.0
+margin_right = 125.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 75, 5 )
+value = 100.0
+texture_progress = SubResource( 11 )
+nine_patch_stretch = true
+
+[node name="Counters" type="VBoxContainer" parent="container/Control/PlayerStats"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 22.0
+margin_top = 219.867
+margin_right = 165.0
+margin_bottom = 344.867
+theme = SubResource( 3 )
+
+[node name="atkLabel" type="Label" parent="container/Control/PlayerStats/Counters"]
+margin_right = 143.0
+margin_bottom = 24.0
+text = "ATK"
+align = 1
+
+[node name="atk" type="Label" parent="container/Control/PlayerStats/Counters"]
+margin_top = 28.0
+margin_right = 143.0
+margin_bottom = 66.0
+custom_fonts/font = SubResource( 33 )
+text = "112"
+align = 1
+
+[node name="defLabel" type="Label" parent="container/Control/PlayerStats/Counters"]
+margin_top = 70.0
+margin_right = 143.0
+margin_bottom = 94.0
+text = "DEF"
+align = 1
+
+[node name="def" type="Label" parent="container/Control/PlayerStats/Counters"]
+margin_top = 98.0
+margin_right = 143.0
+margin_bottom = 122.0
+text = "16"
+align = 1
+
+[node name="OpponentStats" type="Control" parent="container/Control"]
+unique_name_in_owner = true
+margin_left = 193.0
+margin_top = 42.4569
+margin_right = 233.0
+margin_bottom = 82.4569
+
+[node name="userName" type="Label" parent="container/Control/OpponentStats"]
+margin_left = 22.0
+margin_top = 137.0
+margin_right = 174.0
+margin_bottom = 156.0
+rect_clip_content = true
+
+[node name="health" type="HBoxContainer" parent="container/Control/OpponentStats"]
+margin_left = 22.0
+margin_top = 164.391
+margin_right = 165.0
+margin_bottom = 189.391
+
+[node name="hpLabel" type="Label" parent="container/Control/OpponentStats/health"]
+margin_top = 3.0
+margin_right = 22.0
+margin_bottom = 22.0
+text = "HP"
+align = 1
+
+[node name="hpBar" type="TextureProgress" parent="container/Control/OpponentStats/health"]
+margin_left = 26.0
+margin_right = 126.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 100, 25 )
+value = 100.0
+texture_progress = SubResource( 10 )
+nine_patch_stretch = true
+
+[node name="speed" type="HBoxContainer" parent="container/Control/OpponentStats"]
+margin_left = 22.0
+margin_top = 192.004
+margin_right = 165.0
+margin_bottom = 211.004
+
+[node name="speedLabel" type="Label" parent="container/Control/OpponentStats/speed"]
+margin_right = 46.0
+margin_bottom = 19.0
+rect_pivot_offset = Vector2( 73.8892, 17.8631 )
+text = "speed"
+align = 1
+
+[node name="speedBar" type="TextureProgress" parent="container/Control/OpponentStats/speed"]
+margin_left = 50.0
+margin_right = 125.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 75, 5 )
+value = 100.0
+texture_progress = SubResource( 11 )
+nine_patch_stretch = true
+
+[node name="Counters" type="VBoxContainer" parent="container/Control/OpponentStats"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 22.0
+margin_top = 219.867
+margin_right = 165.0
+margin_bottom = 344.867
+theme = SubResource( 3 )
+
+[node name="atkLabel" type="Label" parent="container/Control/OpponentStats/Counters"]
+margin_right = 143.0
+margin_bottom = 24.0
+text = "ATK"
+align = 1
+
+[node name="atk" type="Label" parent="container/Control/OpponentStats/Counters"]
+margin_top = 28.0
+margin_right = 143.0
+margin_bottom = 66.0
+custom_fonts/font = SubResource( 33 )
+text = "32"
+align = 1
+
+[node name="defLabel" type="Label" parent="container/Control/OpponentStats/Counters"]
+margin_top = 70.0
+margin_right = 143.0
+margin_bottom = 94.0
+text = "DEF"
+align = 1
+
+[node name="def" type="Label" parent="container/Control/OpponentStats/Counters"]
+margin_top = 98.0
+margin_right = 143.0
+margin_bottom = 122.0
+text = "12"
+align = 1
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 7 )
+anims/showClock = SubResource( 8 )
+anims/showCounters = SubResource( 6 )
+anims/showMessage = SubResource( 32 )
+
+[node name="matchMessage" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 294.0
+margin_right = 369.0
+margin_bottom = 426.0
+rect_scale = Vector2( 1e-05, 1e-05 )
+rect_pivot_offset = Vector2( 193, 36.5 )
+theme = SubResource( 31 )
+align = 1
+autowrap = true
+
+[node name="ai" type="Node2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="ChangeSet" type="TextureButton" parent="."]
+margin_left = 143.727
+margin_top = 338.917
+margin_right = 221.727
+margin_bottom = 378.917
+theme = ExtResource( 11 )
+script = ExtResource( 12 )
+
+[node name="TextureProgress" type="TextureProgress" parent="ChangeSet"]
+margin_left = -11.4053
+margin_top = 0.405304
+margin_right = 88.5947
+margin_bottom = 39.4053
+rect_min_size = Vector2( 100, 0 )
+texture_progress = SubResource( 51 )
+nine_patch_stretch = true
+
+[node name="Button" type="Button" parent="ChangeSet"]
+margin_left = 1.0
+margin_top = 5.4053
+margin_right = 75.0
+margin_bottom = 34.4053
+mouse_filter = 1
+text = "SET"
+
+[connection signal="button_down" from="ChangeSet" to="ChangeSet" method="_on_LongPress_button_down"]

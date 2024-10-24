@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://MatchPlayerSprite.tscn" type="PackedScene" id=1]
+[ext_resource path="res://PlayerSelectorButton.gd" type="Script" id=2]
+
+[node name="PlayerSelectorButton" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="button" type="TextureButton" parent="."]
+margin_right = 38.0
+margin_bottom = 50.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 35.985, 81.4307 )
+
+[node name="sprite" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 0 )
+
+[connection signal="pressed" from="button" to="." method="_on_TextureButton_pressed"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Bouncy.ogg-6cd2e142fb6011652f02262b1a26b970.oggstr"
+
+[deps]
+
+source_file="res://music/Bouncy.ogg"
+dest_files=[ "res://.import/Bouncy.ogg-6cd2e142fb6011652f02262b1a26b970.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

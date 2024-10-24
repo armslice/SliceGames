@@ -1,0 +1,87 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://sprites/chars/alchemist/Alchemist7.png" type="Texture" id=1]
+[ext_resource path="res://sprites/chars/alchemist/Alchemist6.png" type="Texture" id=2]
+[ext_resource path="res://sprites/chars/alchemist/Alchemist5.png" type="Texture" id=3]
+[ext_resource path="res://sprites/chars/alchemist/Alchemist3.png" type="Texture" id=4]
+[ext_resource path="res://sprites/chars/alchemist/Alchemist8.png" type="Texture" id=5]
+[ext_resource path="res://sprites/chars/alchemist/Alchemist2.png" type="Texture" id=6]
+[ext_resource path="res://sprites/chars/alchemist/Alchemist1.png" type="Texture" id=7]
+[ext_resource path="res://sprites/chars/alchemist/Alchemist4.png" type="Texture" id=8]
+[ext_resource path="res://sprites/chars/alchemist/Alchemist9.png" type="Texture" id=9]
+[ext_resource path="res://sprites/ui/block1.png" type="Texture" id=10]
+[ext_resource path="res://sprites/chars/alchemist/Alchemist11.png" type="Texture" id=11]
+[ext_resource path="res://characters/QuestPlayer.gd" type="Script" id=12]
+[ext_resource path="res://sprites/chars/alchemist/Alchemist12.png" type="Texture" id=13]
+[ext_resource path="res://sprites/chars/alchemist/Alchemist10.png" type="Texture" id=14]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "idle_down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "idle_side",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "idle_up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "walk_down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "walk_side",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "walk_up",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 5.97006, 2.61736 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10.3962, 5.53346 )
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 12 )
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+use_parent_material = true
+position = Vector2( 0, -20.2211 )
+frames = SubResource( 1 )
+animation = "idle_down"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.204203, -1.31925 )
+shape = SubResource( 2 )
+
+[node name="touch" type="Area2D" parent="."]
+position = Vector2( 0, -15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="touch"]
+position = Vector2( 0.142576, 1.146 )
+shape = SubResource( 3 )
+
+[node name="visualization" type="Sprite" parent="touch"]
+visible = false
+modulate = Color( 0.0784314, 1, 0, 0.494118 )
+position = Vector2( 0.286638, 0.268871 )
+scale = Vector2( 0.223512, 0.0809027 )
+texture = ExtResource( 10 )
+
+[node name="look" type="Position2D" parent="."]
+
+[connection signal="area_entered" from="touch" to="." method="_on_touch_area_entered"]

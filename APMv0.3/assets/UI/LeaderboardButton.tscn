@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://themes/button.tres" type="Theme" id=1]
+[ext_resource path="res://UI/LeaderboardButton.gd" type="Script" id=2]
+
+[node name="LeaderboardButton" type="Button"]
+margin_right = 247.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 210, 40 )
+theme = ExtResource( 1 )
+script = ExtResource( 2 )

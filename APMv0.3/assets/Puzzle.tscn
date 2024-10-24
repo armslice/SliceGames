@@ -1,0 +1,641 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://Puzzle.gd" type="Script" id=1]
+[ext_resource path="res://tilesets/gridTile.res" type="TileSet" id=2]
+[ext_resource path="res://fonts/console.tres" type="DynamicFontData" id=3]
+[ext_resource path="res://fonts/BUTTON.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Menu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sprites/ui/check.png" type="Texture" id=6]
+[ext_resource path="res://sprites/ui/menuIcon.png" type="Texture" id=7]
+[ext_resource path="res://sprites/spaceSmall.png" type="Texture" id=8]
+[ext_resource path="res://Profile.tres" type="Theme" id=9]
+[ext_resource path="res://themes/almanac.tres" type="Theme" id=10]
+[ext_resource path="res://UI/FinalScore.tscn" type="PackedScene" id=11]
+[ext_resource path="res://VSMatch.tscn" type="PackedScene" id=12]
+[ext_resource path="res://PuzzleBuilder.tscn" type="PackedScene" id=13]
+[ext_resource path="res://UI/elemPainter.tscn" type="PackedScene" id=14]
+[ext_resource path="res://LongPressButton.tscn" type="PackedScene" id=15]
+[ext_resource path="res://UI/Tutorial.tscn" type="PackedScene" id=16]
+[ext_resource path="res://sprites/ui/undo.png" type="Texture" id=17]
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://fonts/Play-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 14
+font_data = SubResource( 3 )
+
+[sub_resource type="Animation" id=5]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.920635, 1, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 0.7 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("anim")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "pulse", -1, 1.0, false ],
+"method": "play"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.929412 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.741176 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.984314, 0.996078, 0.862745, 1 ), Color( 0.921569, 1, 0, 1 ), Color( 0.964706, 0.976471, 0.831373, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.8, 0.7 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:rect_position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.1 ),
+"transitions": PoolRealArray( 1, 3.605 ),
+"update": 0,
+"values": [ Vector2( 92, 534.016 ), Vector2( 92, 246.529 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Label:rect_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.1 ),
+"transitions": PoolRealArray( 1, 0.25 ),
+"update": 0,
+"values": [ Vector2( 2, 1.5 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=16]
+size = 24
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=15]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 2 ),
+"transitions": PoolRealArray( 1, 2.8, 2.82843 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.8, 1.8 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 2 ),
+"transitions": PoolRealArray( 1, 2.8, 2.8 ),
+"update": 0,
+"values": [ Vector2( 0, 84.273 ), Vector2( -148, 95 ), Vector2( 0, 84.273 ) ]
+}
+
+[node name="Puzzle" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 10.8664, 84.0559 ],
+"_edit_vertical_guides_": [ 182.311, 187.005 ]
+}
+
+[node name="menuButton" type="TextureButton" parent="."]
+visible = false
+margin_left = 12.0
+margin_top = 21.0
+margin_right = 134.0
+margin_bottom = 96.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture_normal = ExtResource( 7 )
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="."]
+margin_left = 32.6565
+margin_top = 12.9431
+margin_right = 150.656
+margin_bottom = 61.9431
+rect_pivot_offset = Vector2( 43.9308, 15.9205 )
+custom_fonts/font = SubResource( 2 )
+align = 1
+valign = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Time"]
+margin_left = 1.02844
+margin_top = 2.57114
+margin_right = 120.028
+margin_bottom = 16.5711
+text = "Time Limit"
+align = 1
+valign = 1
+
+[node name="Level" type="Label" parent="."]
+margin_left = 140.0
+margin_top = 20.0
+margin_right = 231.0
+margin_bottom = 49.0
+rect_pivot_offset = Vector2( 43.9308, 15.9205 )
+custom_fonts/font = SubResource( 1 )
+text = "Lv.1"
+align = 1
+autowrap = true
+
+[node name="mixed" type="Label" parent="."]
+margin_left = 122.0
+margin_top = 45.0
+margin_right = 249.0
+margin_bottom = 67.0
+rect_pivot_offset = Vector2( 62.36, 10.3562 )
+custom_fonts/font = SubResource( 4 )
+text = "Mixed: "
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="poolPos" type="Position2D" parent="."]
+position = Vector2( 86, 742 )
+
+[node name="dropper" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.282353 )
+position = Vector2( 157.485, 49.3865 )
+scale = Vector2( 1, -1 )
+texture = ExtResource( 8 )
+offset = Vector2( 26, -23.575 )
+
+[node name="gridMap" type="TileMap" parent="."]
+modulate = Color( 1, 1, 1, 0.243137 )
+position = Vector2( 40, 50 )
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 60, 60 )
+format = 1
+
+[node name="Grid" type="Node2D" parent="."]
+pause_mode = 1
+
+[node name="scoreMessages" type="Node2D" parent="."]
+position = Vector2( 347.333, 51.4043 )
+
+[node name="scoreLabel" type="Label" parent="."]
+margin_left = 313.0
+margin_top = 15.1764
+margin_right = 359.0
+margin_bottom = 71.1764
+custom_fonts/font = SubResource( 4 )
+text = "Score:"
+align = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="Label" parent="."]
+margin_left = 247.0
+margin_top = 34.0
+margin_right = 360.0
+margin_bottom = 83.0
+custom_fonts/font = SubResource( 1 )
+text = "-Score-"
+align = 2
+autowrap = true
+
+[node name="bonus" type="Label" parent="."]
+modulate = Color( 0.920635, 1, 0, 1 )
+self_modulate = Color( 1, 1, 1, 0.929412 )
+margin_left = 225.809
+margin_top = 4.12733
+margin_right = 313.809
+margin_bottom = 34.1273
+rect_scale = Vector2( 1e-05, 0.7 )
+rect_pivot_offset = Vector2( 88.3135, 30.2965 )
+custom_fonts/font = SubResource( 1 )
+text = "+0%"
+align = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="anim" type="AnimationPlayer" parent="bonus"]
+anims/appear = SubResource( 5 )
+anims/disappear = SubResource( 6 )
+anims/pulse = SubResource( 7 )
+
+[node name="GameOver" type="Control" parent="."]
+pause_mode = 2
+visible = false
+modulate = Color( 1, 0.916667, 0.916667, 0.916667 )
+self_modulate = Color( 1, 1, 1, 0 )
+theme = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOver" type="ColorRect" parent="GameOver"]
+margin_right = 381.0
+margin_bottom = 831.0
+color = Color( 0.0980392, 0.0980392, 0.0980392, 0.835294 )
+
+[node name="anim" type="AnimationPlayer" parent="GameOver"]
+anims/reset = SubResource( 8 )
+anims/reveal = SubResource( 9 )
+
+[node name="Label" type="Label" parent="GameOver"]
+margin_left = 92.0
+margin_top = 246.529
+margin_right = 280.0
+margin_bottom = 338.529
+rect_pivot_offset = Vector2( 92, 2.941 )
+custom_fonts/font = ExtResource( 4 )
+text = "OVERFLOW!
+Game Over"
+align = 1
+
+[node name="ChallengeControls" type="Control" parent="GameOver"]
+margin_right = 374.0
+margin_bottom = 93.0
+
+[node name="Retry" type="Button" parent="GameOver/ChallengeControls"]
+margin_left = 108.254
+margin_top = 355.284
+margin_right = 261.254
+margin_bottom = 405.284
+text = "Retry"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenu" type="Button" parent="GameOver/ChallengeControls"]
+margin_left = 87.8676
+margin_top = 433.459
+margin_right = 281.868
+margin_bottom = 483.459
+text = "Main Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Return" type="Button" parent="GameOver/ChallengeControls"]
+margin_left = 87.1638
+margin_top = 433.104
+margin_right = 281.164
+margin_bottom = 483.104
+text = "Return"
+
+[node name="tabs" type="TabContainer" parent="GameOver"]
+pause_mode = 2
+visible = false
+margin_left = 22.0
+margin_top = 98.0
+margin_right = 356.0
+margin_bottom = 749.0
+theme = ExtResource( 9 )
+
+[node name="Final" type="Tabs" parent="GameOver/tabs"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 44.0
+theme = ExtResource( 10 )
+
+[node name="FinalScore" parent="GameOver/tabs/Final" instance=ExtResource( 11 )]
+
+[node name="MIXES" type="Tabs" parent="GameOver/tabs"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 44.0
+theme = ExtResource( 10 )
+
+[node name="Panel2" type="Panel" parent="GameOver/tabs/MIXES"]
+margin_left = 9.0
+margin_top = 20.0
+margin_right = 324.0
+margin_bottom = 579.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="scroll" type="ScrollContainer" parent="GameOver/tabs/MIXES"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 36.0
+margin_top = 61.0
+margin_right = -27.0
+margin_bottom = -52.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vbox" type="VBoxContainer" parent="GameOver/tabs/MIXES/scroll"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Requirements" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 22.1719
+margin_top = 141.998
+margin_right = 22.1719
+margin_bottom = 141.998
+theme = ExtResource( 9 )
+
+[node name="Panel" type="Panel" parent="Requirements"]
+modulate = Color( 0.317647, 0.317647, 0.317647, 0.94902 )
+margin_left = -33.0
+margin_right = 356.0
+margin_bottom = 556.0
+
+[node name="Label" type="Label" parent="Requirements"]
+margin_left = 25.0
+margin_top = 34.0
+margin_right = 299.0
+margin_bottom = 86.0
+text = "Requirements"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="scroll" type="ScrollContainer" parent="Requirements"]
+margin_left = 23.0
+margin_top = 89.0
+margin_right = 320.0
+margin_bottom = 484.0
+scroll_horizontal_enabled = false
+
+[node name="vbox" type="VBoxContainer" parent="Requirements/scroll"]
+margin_right = 270.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 270, 0 )
+
+[node name="info" type="Label" parent="Requirements/scroll/vbox"]
+margin_right = 270.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 16 )
+text = "Requirements"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[node name="CONTINUE" parent="Menu" index="1"]
+margin_top = 107.28
+margin_bottom = 157.28
+
+[node name="RESET" parent="Menu" index="2"]
+margin_top = 175.667
+margin_bottom = 225.667
+
+[node name="QUEST_CHALLENGES" parent="Menu" index="3"]
+margin_top = 182.262
+margin_bottom = 232.262
+
+[node name="QUIT" parent="Menu" index="4"]
+margin_left = 80.8328
+margin_top = 285.726
+margin_right = 318.833
+margin_bottom = 335.726
+text = "RETURN TO QUEST"
+
+[node name="MixMessages" type="Node2D" parent="."]
+position = Vector2( 0, 84.273 )
+z_index = 10
+
+[node name="anim" type="AnimationPlayer" parent="MixMessages"]
+anims/emphasis = SubResource( 15 )
+
+[node name="PuzzleBuilder" parent="." instance=ExtResource( 13 )]
+visible = false
+
+[node name="ElemPainter" parent="." instance=ExtResource( 14 )]
+margin_left = 74.0962
+margin_top = 68.5103
+margin_right = 74.0962
+margin_bottom = 68.5103
+
+[node name="builderButton" type="Button" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.490196 )
+margin_left = 294.751
+margin_top = 721.81
+margin_right = 362.751
+margin_bottom = 744.81
+text = "PuzBuild"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="reqButton" type="TextureButton" parent="."]
+visible = false
+margin_left = 11.9193
+margin_top = 744.147
+margin_right = 55.9193
+margin_bottom = 788.147
+texture_normal = ExtResource( 6 )
+expand = true
+stretch_mode = 3
+
+[node name="VSMatch" parent="." instance=ExtResource( 12 )]
+__meta__ = {
+"_edit_horizontal_guides_": [ 300.361 ]
+}
+
+[node name="Undo" type="TextureButton" parent="."]
+margin_left = 77.711
+margin_top = 739.87
+margin_right = 122.711
+margin_bottom = 790.87
+texture_normal = ExtResource( 17 )
+stretch_mode = 2
+
+[node name="Reset" parent="." instance=ExtResource( 15 )]
+margin_left = 130.241
+margin_top = 738.921
+margin_right = 240.241
+margin_bottom = 797.921
+
+[node name="Button" type="Button" parent="Reset"]
+margin_left = 11.6472
+margin_top = 12.8118
+margin_right = 96.6472
+margin_bottom = 41.8118
+mouse_filter = 1
+text = "Reset"
+
+[node name="Tutorial" parent="." instance=ExtResource( 16 )]
+
+[connection signal="pressed" from="menuButton" to="." method="_on_menuButton_pressed"]
+[connection signal="pressed" from="GameOver/ChallengeControls/Retry" to="." method="_on_Retry_pressed"]
+[connection signal="pressed" from="GameOver/ChallengeControls/MainMenu" to="." method="_on_MAIN_MENU_pressed"]
+[connection signal="pressed" from="GameOver/ChallengeControls/Return" to="." method="_on_Return_pressed"]
+[connection signal="pressed" from="Menu/CONTINUE" to="." method="_on_CONTINUE_pressed"]
+[connection signal="pressed" from="Menu/RESET" to="." method="_on_RESET_pressed"]
+[connection signal="pressed" from="Menu/QUIT" to="." method="_on_QUIT_pressed"]
+[connection signal="pressed" from="Menu/MAIN MENU" to="." method="_on_MAIN_MENU_pressed"]
+[connection signal="pressed" from="Menu/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="Menu/HELP" to="." method="_on_HELP_pressed"]
+[connection signal="pressed" from="builderButton" to="." method="_on_builderButton_pressed"]
+[connection signal="pressed" from="reqButton" to="." method="_on_requirements_pressed"]
+[connection signal="pressed" from="Undo" to="." method="_on_Undo_pressed"]
+[connection signal="press_complete" from="Reset" to="." method="_on_Reset_press_complete"]
+
+[editable path="Menu"]
